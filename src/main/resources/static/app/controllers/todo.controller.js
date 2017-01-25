@@ -1,8 +1,8 @@
-angular.module('todoApp')
-.controller('TodoController', ['$scope', 'Todos', function TodoController($scope, Todos) {
 
+todoApp.controller('TodoController', ['$scope', 'Todos', function TodoController($scope, Todos) {
+	
 	$scope.formData = {};
-
+	console.log("in the TodoController");
     // when landing on the page, get all todos and show them
     Todos.get()
     .success(function(data) {
@@ -51,7 +51,8 @@ angular.module('todoApp')
         $scope.editedTodo = {};
     }
 
-}]).directive('todoFocus', ['$timeout', function($timeout) {
+}]);
+todoApp.directive('todoFocus', ['$timeout', function($timeout) {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {

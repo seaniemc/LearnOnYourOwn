@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
     <title>Todo App</title>
-
+    <!-- css links  -->
     <link href="vendor/bootstrap-css-only/css/bootstrap.min.css" rel="stylesheet"><!-- load bootstrap -->
     <link rel="stylesheet" href="assets/css/todoApp.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/Header-Picture.css">
 </head>
-<body>
-
-    <div ng-include="'app/views/header.view.html'"></div>
-    <div id="main" ng-include="'app/views/todo.view.html'"></div>
-    <div ng-include="'app/views/footer.view.html'"></div>
-
+<body ng-controller="TodoController">
+	
+    <div id="main" ng-include="'app/views/header.html'"></div>
+  
+            <div ng-view></div>
+    <!--<div ng-include="'app/views/footer.view.html'"></div>
+    -->
     <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU"
+    crossorigin="anonymous"></script>
     <script src="app/app.js"></script>
     <script src="app/services/todo.service.js"></script>       
     <script src="app/controllers/todo.controller.js"></script>   
