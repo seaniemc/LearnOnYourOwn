@@ -1,13 +1,12 @@
 var todoApp = angular.module('todoApp', [
-    'ngRoute'
+    'ui.router'
 ]);
+todoApp.config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+    .state('todo', {
+        url: "/",
+        templateUrl: 'app/views/todo.html',
 
-todoApp.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
-    .when('/#', 
-    		{
-    	  templateUrl: '/views/todo.html',
-	      controller: 'TodoController'
-    		})
-    }]);
-
+    })
+    $urlRouterProvider.otherwise('/');
+});
