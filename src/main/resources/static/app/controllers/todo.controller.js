@@ -3,11 +3,13 @@ todoApp.controller('TodoController', ['$scope', 'Todos', function TodoController
 	
 	$scope.formData = {};
 	console.log("in the TodoController");
-    // when landing on the page, get all todos and show them
-    Todos.get()
-    .success(function(data) {
-        $scope.todos = data;
-    });
+    // // when landing on the page, get all todos and show them
+    // Todos.get()
+    // .success(function(data) {
+    //     $scope.todos = data;
+    // }).fail(function(err){
+    //     console.log('error getting todo\'s:', err);
+    // });
 
     // when submitting the add form, send the text to the spring API
     $scope.createTodo = function() {

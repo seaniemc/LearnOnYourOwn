@@ -1,0 +1,25 @@
+
+<div class="container main-content" ng-controller="dragAndDropController">
+    <div class="container main-content">
+        <form action="/login" method="post" target="hidden-iframe">
+            <br />
+            <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text"
+                   class="form-control"
+                   name="username"
+                   id="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"
+                   class="form-control"
+                   id="password">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="go('/fileupload')">Login</button>
+        </div>
+
+    </form>
+ <iframe name="hidden-iframe" style="display: none;"></iframe>
+</div>
