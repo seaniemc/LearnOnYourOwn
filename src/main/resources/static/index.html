@@ -8,9 +8,15 @@
         <!-- Angular ans JS links-->
         <script src="vendor/angular/angular.min.js"></script>
         <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="vendor/angular-auto-validate/dist/jcs-auto-validate.min.js"></script>
+        <script src="vendor/angular-ladda/dist/angular-ladda.min.js"></script>
+        <script src="vendor/ladda/dist/ladda.min.js"></script>
+        <script src="vendor/ladda/dist/spin.min.js"></script>
+
         <script src="app/app.js"></script>
         <script src="app/services/todo.service.js"></script>       
         <script src="app/controllers/todo.controller.js"></script>
+        <script src="app/controllers/user.controller.js"></script>
 
         <!-- <script src="vendor/angular-route/angular-route.min.js"></script>-->
 
@@ -21,10 +27,13 @@
         crossorigin="anonymous"></script>
         <!-- css links  -->
         <link href="vendor/bootstrap-css-only/css/bootstrap.min.css" rel="stylesheet"><!-- load bootstrap -->
+        <link href="vendor/ladda/dist/ladda-themeless.min.css" rel="stylesheet" >
         <link rel="stylesheet" href="assets/css/todoApp.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/Header-Picture.css">
+       <!-- <link rel="stylesheet" type="text/css" href="assets/css/Header-Picture.css">-->
+        <link rel="stylesheet" type="text/css" href="assets/css/Basic-Header.css">
+         <link rel="stylesheet" type="text/css" href="assets/css/registerPage.css">
     </head>
-    <body ng-controller="TodoController">
+    <body>
         <div ng-include="'app/views/header.html'"></div>   
         
         <ui-view></ui-view>
