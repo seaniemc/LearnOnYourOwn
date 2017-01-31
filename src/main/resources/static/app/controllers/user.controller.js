@@ -1,4 +1,5 @@
-todoApp.controller('UserController', ['$scope', 'Users', function UserController($scope, Users) {
+
+todoApp.controller('UserController', ['$scope','$http', function UserController($scope, $http) {
     console.log("in user controller");
 
     $scope.formModel = {};

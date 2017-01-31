@@ -1,6 +1,7 @@
-<div class="container" ng-controller="UserController">
 
-    <div class="row main">
+<div class="container">
+
+    <div class="row main"  ng-controller="UserController">
         <div class="main-login main-center">
         <h5>Sign up once for instant access.</h5>
             <form ng-submit="onSubmit()"
@@ -13,11 +14,11 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                             <input type="text" 
-                            class="form-control" 
-                             ng-model="formModel.name"
-                            id="name"  
-                            placeholder="Enter your Name"
-                            required="required" />
+                                class="form-control" 
+                                ng-model="formModel.name"
+                                id="name"  
+                                placeholder="Enter your Name"
+                                required="required" />
                         </div>
                     </div>
                 </div>
@@ -28,11 +29,11 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
                             <input type="email" 
-                            class="form-control" 
-                            ng-model="formModel.email"
-                            id="email"  
-                            placeholder="Enter your Email"
-                            required="required" />
+                                class="form-control" 
+                                ng-model="formModel.email"
+                                id="email"  
+                                placeholder="Enter your Email"
+                                required="required" />
                         </div>
                     </div>
                 </div>
@@ -43,11 +44,11 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
                             <input type="text" 
-                            class="form-control" 
-                            ng-model="formModel.username"
-                            id="username"  
-                            placeholder="Enter your Username"
-                            required="required" />
+                                class="form-control" 
+                                ng-model="formModel.username"
+                                id="username"  
+                                placeholder="Enter your Username"
+                                required="required" />
                         </div>
                     </div>
                 </div>
@@ -58,11 +59,11 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-id-badge" aria-hidden="true"></i></span>
                             <input type="password" 
-                            class="form-control" 
-                            ng-model="formModel.password" 
-                            id="password"  
-                            placeholder="Enter your Password"
-                            required="required" />
+                                class="form-control" 
+                                ng-model="formModel.password" 
+                                id="password"  
+                                placeholder="Enter your Password"
+                                required="required" />
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,7 @@
                 <div class="form-group" >
                     <label for="gender" class="cols-sm-2 control-label">Sex</label >
                     <div class="cols-sm-10">
-                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="false"></i></span>
                         <select id="gender"
                                         class="form-control"
                                         ng-model="formModel.sex"
@@ -109,14 +110,23 @@
                         </select >
                     </div>
                 </div >
-                <div class="form-group ">
+                <div>
+                    <button class="btn btn-primary"
+                            ladda="submitting"
+                            data-style="expand-right"
+                                type="submit">
+                        <span ng-show="submitting">Registering</span>
+                        <span ng-show="!submitting">Register</span>
+			        </button>
+                </div>
+                <!--<div class="form-group ">
                     <a  target="_blank" type="button" 
                     id="button" 
                     class="btn btn-primary btn-lg btn-block login-button"
                     ladda="submitting"
                     data-style="expand-right"
                     >Register</a>
-                </div>
+                </div>-->
                 
             </form>
         </div>

@@ -1,8 +1,10 @@
+
 var todoApp = angular.module('todoApp', [
     'ui.router',
     'jcs-autoValidate',
 	'angular-ladda'
 ]);
+
 todoApp.config(function ($stateProvider, $urlRouterProvider) {
     var homeState = {
         name: 'home',
@@ -29,11 +31,5 @@ todoApp.config(function ($stateProvider, $urlRouterProvider) {
         .state(registerState)
          .state(loginState);
 
-    // $stateProvider
-    // .state('home', {
-    //     url: "/",
-    //     templateUrl: 'app/views/todo.html',
-
-    // })
     $urlRouterProvider.otherwise('/');
 });
