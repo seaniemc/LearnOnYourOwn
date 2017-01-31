@@ -4,7 +4,7 @@
     <div class="row main"  ng-controller="UserController">
         <div class="main-login main-center">
         <h5>Sign up once for instant access.</h5>
-            <form ng-submit="onSubmit()"
+            <form name="userForm" ng-submit="createUser()"
 				novalidate="novalidate"
 			    ng-hide="submitted" >
 
