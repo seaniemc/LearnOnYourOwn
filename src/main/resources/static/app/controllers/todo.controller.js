@@ -1,14 +1,13 @@
-angular.module('todoApp')
-.controller('TodoController', ['$scope', 'Todos', function TodoController($scope, Todos) {
 
+todoApp.controller('TodoController', ['$scope', 'Todos', function TodoController($scope, Todos) {
+	
 	$scope.formData = {};
-
+	console.log("in the TodoController");
     // when landing on the page, get all todos and show them
     Todos.get()
     .success(function(data) {
         $scope.todos = data;
     });
-
     // when submitting the add form, send the text to the spring API
     $scope.createTodo = function() {
         if(!$scope.todoForm.$valid) {
@@ -51,7 +50,8 @@ angular.module('todoApp')
         $scope.editedTodo = {};
     }
 
-}]).directive('todoFocus', ['$timeout', function($timeout) {
+}]);
+todoApp.directive('todoFocus', ['$timeout', function($timeout) {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
