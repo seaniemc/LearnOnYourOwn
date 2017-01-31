@@ -5,8 +5,8 @@ todoApp.factory('Users', ['$http', function($http) {
 			return $http.get('/api/users');
 		},
 
-		create: function(todoData) {
-			return $http.post('/api/users', todoData);
+		create: function(userData) {
+			return $http.post('/api/users', userData);
 		},
 
 		delete: function(id) {
@@ -14,7 +14,7 @@ todoApp.factory('Users', ['$http', function($http) {
 		},
 
 		update: function(todoData) {
-			return $http.put('/api/users/' + todoData.id, todoData);
+			return $http.put('/api/users/' + userData.id, userData);
 		}
 	}
 }]);
