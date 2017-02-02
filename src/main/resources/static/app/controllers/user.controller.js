@@ -1,9 +1,7 @@
-
-todoApp.controller('UserController', ['Users','$scope','$http', function UserController(Users, $scope, $http) {
+todoApp.controller('UserController', ['Users','$scope', function UserController(Users, $scope) {
     console.log("in user controller");
 
     $scope.formModel = {};
-
 	$scope.submitting = false;
 	$scope.submitted = false;
 	$scope.has_error = false;
@@ -19,25 +17,58 @@ todoApp.controller('UserController', ['Users','$scope','$http', function UserCon
         }
 		Users.create($scope.formModel)
 		.success(function(data){
-			console.log(":)");
+			
 			$scope.submitting = false;
 			$scope.submitted = true;
 			$scope.has_error = false;
+            $scope.formModel = {}; // clear the form so our user is ready to enter another
+            $scope.users.push(data);
+            console.log(":)");
 		}).error(function(data) {
 			console.log(":(");
 			$scope.submitting = false;
  			$scope.submitted = false;
  			$scope.has_error = true;
 		});
+		
+	    // when submitting the add form, send the text to the node API
+//	    $scope.saveUser = function(users) {
+//	        Users.update(users)
+//	        .success(function(data) {
+//	            $scope.editedUser = {};
+//	        });
+//	    };
 
-		$scope.saveUser = function(users) {
-	        Users.update(users)
-	        .success(function(data) {
-	            $scope.editedUser = {};
-	        });
-	    };
-        
+        // Users.create($scope.formModel)
+		// console.log($scope.formModel)
+        // .success(function(data) {
+        //     $scope.formModel = {}; // clear the form so our user is ready to enter another
+        //     $scope.users.push(data);
+        // });
     };
+
+	// $scope.submitting = false;
+	// $scope.submitted = false;
+
+    // $scope.onSubmit = function () {
+	// 	$scope.submitting = true;
+	// 	console.log("Hey i'm submitted!");
+	// 	console.log($scope.formModel);
+
+    //     $http.post('https://minmax-server.herokuapp.com/register/', $scope.formModel).
+	// 		success(function (data) {
+	// 			console.log(":)");
+	// 			$scope.submitting = false;
+	// 			$scope.submitted = true;
+	// 			$scope.has_error = false;
+	// 		}).error(function(data) {
+	// 			console.log(":(");
+	// 			$scope.submitting = false;
+	// 			$scope.submitted = false;
+	// 			$scope.has_error = true;
+	// 		});
+
+    // };
 
 
 }]);
