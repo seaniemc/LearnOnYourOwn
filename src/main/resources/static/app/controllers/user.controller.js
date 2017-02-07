@@ -32,7 +32,12 @@ todoApp.controller('UserController', ['Users','$scope', function UserController(
 		});
 		
 	    // when submitting the add form, send the text to the node API
-
+//	    $scope.saveUser = function(users) {
+//	        Users.update(users)
+//	        .success(function(data) {
+//	            $scope.editedUser = {};
+//	        });
+//	    };
 
         // Users.create($scope.formModel)
 		// console.log($scope.formModel)
