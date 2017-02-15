@@ -1,4 +1,3 @@
-//angular.module('todoApp')
 todoApp.factory('Users', ['$http', function($http) {
 	return {
 		get: function() {

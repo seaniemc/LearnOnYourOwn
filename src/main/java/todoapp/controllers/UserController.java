@@ -19,7 +19,6 @@ import todoapp.repositories.UserRepository;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
-	
 	@Autowired
 	UserRepository userRepository;
 	
@@ -53,11 +52,10 @@ public class UserController {
 			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
 		}
 		userData.setName(user.getName());
-		userData.setEmail(user.getEmail());
 		userData.setUsername(user.getUsername());
 		userData.setPassword(user.getPassword());
-		userData.setGender(user.getGender());
-		userData.setType(user.getType());
+		userData.setRole(user.getRole());
+		
 		User updatedUser = userRepository.save(userData);
 		return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
 	}
