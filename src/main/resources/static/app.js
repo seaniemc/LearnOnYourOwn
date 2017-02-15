@@ -1,34 +1,35 @@
-(function () {
-    'use strict';
 
-angular.module('todoApp', [
+var todoApp = angular.module('todoApp', [
     'ui.router',
-    'auth0.lock', 
-    'angular-jwt'
-])
-.config(config);
+    'jcs-autoValidate',
+	'angular-ladda'
+]);
 
-config.$inject = ['$stateProvider', 'lockProvider', '$urlRouterProvider'];
-
-function config ($stateProvider, $urlRouterProvider, lockProvider) {
-
-   $stateProvider
-      .state('home',{
+todoApp.config(function ($stateProvider, $urlRouterProvider) {
+    var homeState = {
+        name: 'home',
         url: '/',
         templateUrl: 'app/views/todo.html',
         controller: 'TodoController'
-      })
-       .state('login',{
-        url: '/login',
-        controller: 'LoginController',
-        templateUrl: 'app/components/login/login.html',
-        controllerAs: 'vm'
-    });
+    };
 
-    lockProvider.init({
-      clientID: AUTH0_CLIENT_ID,
-      domain: AUTH0_DOMAIN
-    });
+    var loginState = {
+        name: 'login',
+        url: '/login',
+        templateUrl: 'app/views/login.html',
+        controller: 'UserController'
+    };
+     var registerState = {
+        name: 'register',
+        url: '/register',
+        templateUrl: 'app/views/register.html',
+        controller: 'UserController'
+    };
+
+    $stateProvider
+        .state(homeState)
+        .state(registerState)
+         .state(loginState);
+
     $urlRouterProvider.otherwise('/');
-}
-})();
+});
