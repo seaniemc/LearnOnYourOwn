@@ -3,28 +3,24 @@ package todoapp.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "courses")
-public class Courses {
+@Document(collection = "lecturer")
+public class Lecturer {
 	@Id
 	private String id;
 	private String name;
-	private String lecturer;
 	private String picture;
-	private String video;
+	private String courses;
 	private String description;
-	private String enroled;
+	
+	public Lecturer(){}
 	  
-	public Courses(){}
-	  
-	public Courses(String name, String lecturer, String picture, String video, String description,String enroled) {
+	public Lecturer(String name, String picture, String courses, String description) {
 		this.name = name;
-		this.lecturer = lecturer;
 		this.picture = picture;
-		this.video = video;
+		this.courses = courses;
 		this.description = description;
-		this.enroled = enroled;
 	}
-
+	
 	public String getId() {
 		return id;
 	}
@@ -37,23 +33,17 @@ public class Courses {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getLecturer() {
-		return lecturer;
-	}
-	public void setLecturer(String lecturer) {
-		this.lecturer = lecturer;
-	}
 	public String getPicture() {
 		return picture;
 	}
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	public String getVideo() {
-		return video;
+	public String getCourses() {
+		return courses;
 	}
-	public void setVideo(String video) {
-		this.video = video;
+	public void setCourses(String courses) {
+		this.courses = courses;
 	}
 	public String getDescription() {
 		return description;
@@ -61,20 +51,16 @@ public class Courses {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getEnroled() {
-		return enroled;
-	}
-	public void setEnroled(String enroled) {
-		this.enroled = enroled;
-	}
-	
-    @Override
-    public String toString() {
-        return "Courses{" +
+
+	@Override
+	public String toString() {
+        return "Lecturer{" +
                 "id='" + id + "'" +
                 ", name='" + name + "'" +
-                ", lecturer='" + lecturer + "'" +
+                ", picture='" + picture + "'" +
+                ", courses='" + courses + "'" +
                 ", description='" + description + "'" +
                 '}';
-    }
+	}
+	
 }
