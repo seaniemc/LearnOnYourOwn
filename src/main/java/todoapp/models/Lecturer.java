@@ -11,14 +11,16 @@ public class Lecturer {
 	private String picture;
 	private String courses;
 	private String description;
-	
+	private String role;
+
 	public Lecturer(){}
 	  
-	public Lecturer(String name, String picture, String courses, String description) {
+	public Lecturer(String name, String picture, String courses, String description, String role) {
 		this.name = name;
 		this.picture = picture;
 		this.courses = courses;
 		this.description = description;
+		this.role = role;
 	}
 	
 	public String getId() {
@@ -50,6 +52,14 @@ public class Lecturer {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	@Override
