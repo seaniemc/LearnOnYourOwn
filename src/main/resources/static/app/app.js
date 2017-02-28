@@ -5,11 +5,11 @@ var todoApp = angular.module('todoApp', [
 	'angular-ladda'
 ]);
 
-todoApp.config(function ($stateProvider, $urlRouterProvider) {
+todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     var homeState = {
         name: 'home',
         url: '/',
-        templateUrl: 'app/views/todo.html',
+        templateUrl: 'app/views/home.html',
         controller: 'TodoController'
     };
 
@@ -17,7 +17,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider) {
         name: 'login',
         url: '/login',
         templateUrl: 'app/views/login.html',
-        controller: 'UserController'
+        controller: 'navigation'
     };
      var registerState = {
         name: 'register',
@@ -32,4 +32,11 @@ todoApp.config(function ($stateProvider, $urlRouterProvider) {
          .state(loginState);
 
     $urlRouterProvider.otherwise('/');
+    
+    //$httpProvider.defaults.withCredentials = true;
+    //$httpProvider.interceptors.push('XSRFInterceptor');
+    
+//    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+//    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+   $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 });

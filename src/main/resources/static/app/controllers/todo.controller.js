@@ -1,3 +1,4 @@
+//angular.module('todoApp')
 todoApp.controller('TodoController', ['$scope', 'Todos', function TodoController($scope, Todos) {
 	
 	$scope.formData = {};

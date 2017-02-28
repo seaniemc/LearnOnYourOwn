@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,7 @@ public class UserController {
 	}
 
 	//create statement
+	//@Secured("IS_AUTHENTICATED_ANONYMOUSLY")
 	@RequestMapping(method=RequestMethod.POST)
 	public User createUser(@Valid @RequestBody User user) {
 		return userRepository.save(user);
@@ -45,20 +47,21 @@ public class UserController {
 		}
 	}
 	
-	@RequestMapping(value="{id}", method=RequestMethod.PUT)
-	public ResponseEntity<User> updateUser(@Valid @RequestBody User user, @PathVariable("id") String id) {
-		User userData = userRepository.findOne(id);
-		if(userData == null) {
-			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
-		}
-		userData.setName(user.getName());
-		userData.setUsername(user.getUsername());
-		userData.setPassword(user.getPassword());
-		userData.setRole(user.getRole());
+	// @RequestMapping(value="{id}", method=RequestMethod.PUT)
+	// public ResponseEntity<User> updateUser(@Valid @RequestBody User user, @PathVariable("id") String id) {
+	// 	User userData = userRepository.findOne(id);
+	// 	if(userData == null) {
+	// 		return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+	// 	}
+	// 	userData.setName(user.getName());
+	// 	userData.setEmail(user.getEmail());
+	// 	userData.setUsername(user.getUsername());
+	// 	userData.setPassword(user.getPassword());
+	// 	userData.setRole(user.getRole());
 		
-		User updatedUser = userRepository.save(userData);
-		return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
-	}
+	// 	User updatedUser = userRepository.save(userData);
+	// 	return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
+	// }
 	
 	
 	//delete by Id
