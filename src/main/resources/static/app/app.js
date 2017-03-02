@@ -10,7 +10,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         name: 'home',
         url: '/',
         templateUrl: 'app/views/home.html',
-        controller: 'TodoController'
+        controller: 'CoursesCtrl'
     };
 
     var loginState = {
@@ -18,6 +18,12 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         url: '/login',
         templateUrl: 'app/views/login.html',
         controller: 'navigation'
+    };
+    var todoState = {
+        name: 'todo',
+        url: '/todo',
+        templateUrl: 'app/views/todo.html',
+        controller: 'TodoController'
     };
      var registerState = {
         name: 'register',
@@ -28,8 +34,10 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
     $stateProvider
         .state(homeState)
+        .state(todoState)
         .state(registerState)
          .state(loginState);
+
 
     $urlRouterProvider.otherwise('/');
     
