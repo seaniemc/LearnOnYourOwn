@@ -3,13 +3,13 @@
     overflow: hidden !important;
     -webkit-overflow-scrolling: touch;
 }
-body, html{
+/*body, html{
     height: 100%;
  	background-repeat: no-repeat;
  	background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
  	font-family: 'Oxygen', sans-serif;
 	    background-size: cover;
-}
+}*/
 
 .main{
  	margin:50px 15px;
@@ -107,4 +107,22 @@ span.input-group-addon i {
 .login-register{
 	font-size: 11px;
 	text-align: center;
+}
+/*#navlist li
+{
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}   */
+
+.row{
+    text-align: center;
+}
+.row .col-md-12 .thumbnail{ 
+   display: inline-block;
+   width: 350px;
+   height: 275px;
+   padding: 10%;
+   background-color: #c0c0c0
+   
 }

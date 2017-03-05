@@ -32,10 +32,19 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'UserController'
     };
 
+    var courseState = {
+        name: 'course',
+        url: '/course/:name',
+        templateUrl: 'app/views/course.html',
+        controller: 'CoursesCtrl'
+    };
+
+
     $stateProvider
         .state(homeState)
         .state(todoState)
         .state(registerState)
+        .state(courseState)
          .state(loginState);
 
 

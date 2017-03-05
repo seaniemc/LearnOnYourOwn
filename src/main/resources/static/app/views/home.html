@@ -3,17 +3,37 @@
         <h1><i class="fa fa-camera-retro"></i></span> Learn On Your Own</h1>
         <p>we need to put some text in here</p>
     </div>
-    
+
     <div class="row" ng-controller="CoursesCtrl">
-        <div class="col-lg-3 col-sm-6" >
-            <div class="thumbnail" ng-repeat="course in courses">
-                <div>
-                    <span ng-click="">{{course.name}}</span>
-                </div>
-                <img  ng-src="{{course.picture}}">
-                <span ng-click="">{{course.lecturer}}</span>
-            </div>
-        </div>
+        <ul class="col-md-12" >
+            <a ng-href="#/course/{{course.name}}">
+                <li class="thumbnail" ng-repeat="course in courses" >
+                    <p>{{course.name}}</p>
+                    <img  ng-src="{{course.picture}}" alt="" />
+                </li>
+            </a>
+        </ul>
     </div>
+    
+    <!--<div class="row" ng-controller="CoursesCtrl">
+            <ul class="col-md-4" id="navlist" >
+                <li class="thumbnail" ng-repeat="course in courses">
+                    <div>
+                        <span ng-click="">{{course.name}}</span>
+                        <img  ng-src="{{course.picture}}">
+                        <span ng-click="">{{course.lecturer}}</span> 
+                    </div>   
+                </li>
+            </ul>-->
+            <!--<div ng-repeat="course in courses">
+                <div>
+                    <span {{course.name}}</span>
+                </div>
+                <img class="thumbnail"  ng-src="{{course.picture}}" width="200" height="200">
+                <span ng-click="">{{course.lecturer}}</span>
+                <div class="thumbnail col-md-12">
+                    class="col-md-4" id="navlist"
+            </div>-->
+    <!--</div>-->
     
 </div>
