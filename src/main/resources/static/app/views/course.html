@@ -1,10 +1,14 @@
 <div class="container" >
 
-    <div class="row" ng-controller="CoursesCtrl">
+    <div class="row" ng-init="loadCourse()" >
         <div class="col-4">
             
         </div>
-        <div class="col-8">
-            
+        <div class="col-8" ng-controller="CoursesCtrl"> 
+            <div>
+                <h2>{{loadCourse.name}}</h2>
+                <img  ng-src="{{loadCourse.picture}}" alt="" />
+                    
+            </div>
         </div>
     </div>

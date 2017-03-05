@@ -1,7 +1,7 @@
 
 todoApp.controller('CoursesCtrl', ['Courses','$scope', function CoursesCtrl(Courses, $scope, $stateParams){
 
-//    var self = this;
+    $scope.courses = null;
     
     Courses.get()
     .success(function(data) {
@@ -9,17 +9,22 @@ todoApp.controller('CoursesCtrl', ['Courses','$scope', function CoursesCtrl(Cour
         console.log(data);
     });
 
-    
+    $scope.loadCourse($scope.courses, $stateParams.name);
 
-    // var self = {
-	// 	'getPerson': function (email) {
-	// 		console.log(email);
-	// 		for (var i = 0; i < self.persons.length; i++) {
-	// 			var obj = self.persons[i];
-	// 			if (obj.email == email) {
-	// 				return obj;
-	// 			}
+    $scope.loadCourse = function(courses, name){
+         	console.log(name);
+        	for (var i = 0; i < courses.length; i++) {
+				var obj = self.courses[i];
+				if (obj.name == name) {
+		 			return obj;
+                }
+	 		}
+            
+    };
+	
+		
+		
 
-	// 		}
-	// 	}
+		// 	}
+		// }
 }]);
