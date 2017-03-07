@@ -1,5 +1,9 @@
 
-todoApp.controller('CoursesCtrl', ['Courses','$scope', function CoursesCtrl(Courses, $scope, $stateParams){
+todoApp.controller('CoursesCtrl', ['Courses','$scope', function CoursesCtrl(Courses, $scope){
+    
+    // $scope.status;
+    // $scope.courseName = $stateParams;
+    //console.log($scope.courseName);
 
     $scope.courses = null;
     
@@ -9,18 +13,27 @@ todoApp.controller('CoursesCtrl', ['Courses','$scope', function CoursesCtrl(Cour
         console.log(data);
     });
 
-    $scope.loadCourse($scope.courses, $stateParams.name);
+    //Courses.getByName($scope.courseName)
 
-    $scope.loadCourse = function(courses, name){
-         	console.log(name);
-        	for (var i = 0; i < courses.length; i++) {
-				var obj = self.courses[i];
-				if (obj.name == name) {
-		 			return obj;
-                }
-	 		}
-            
-    };
+   
+        Courses.getByName($scope.courseName)
+            .then(function (response) {
+                $scope.courses = response.data;
+            }, function (error) {
+                $scope.status = 'Unable to load customer data: ' + error.message;
+            });
+//    $scope.loadCourse($scope.courses, $stateParams.name);
+
+//    $scope.loadCourse = function(courses, name){
+//         	console.log(name);
+//        	for (var i = 0; i < courses.length; i++) {
+// 				var obj = self.courses[i];
+// 				if (obj.name == name) {
+// 		 			return obj;
+//                }
+// 	 		}
+           
+//    };
 	
 		
 		

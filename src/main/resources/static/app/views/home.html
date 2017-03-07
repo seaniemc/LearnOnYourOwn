@@ -6,16 +6,21 @@
 
     <div class="row" ng-controller="CoursesCtrl">
         <ul class="col-md-12"  >
-                <li class="thumbnail" ui-sref="course({name:course.name})" ng-repeat="course in courses" >
-                    <p>{{course.name}}</p>
-                    <img  ng-src="{{course.picture}}" alt="" />
+                <li class="thumbnail" ng-repeat="course in courses" >
+                    <a ui-sref="course({name:course.name})">
+                        <div class="name">
+                            <h3>{{course.name}}</h3>
+                        </div>
+                        <img  ng-src="{{course.picture}}" alt="" />
+                    </a>
                 </li>  
         </ul>
     </div>
+    <!--<p>{{course.name}}</p>-->
     <!--<a ng-href="#/course/{{course.name}}">-->
     <!--</a>-->
 
-
+<!--  -->
     <!--<div class="row" ng-controller="CoursesCtrl">
             <ul class="col-md-4" id="navlist" >
                 <li class="thumbnail" ng-repeat="course in courses">

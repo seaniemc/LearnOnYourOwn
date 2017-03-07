@@ -36,7 +36,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         name: 'course',
         url: '/course/:name',
         templateUrl: 'app/views/course.html',
-        controller: 'CoursesCtrl'
+        controller: 'CoursesDetailsCtrl'
     };
 
 
