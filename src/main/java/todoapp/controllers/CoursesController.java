@@ -35,15 +35,16 @@ public class CoursesController {
 	}
 
 	//return by Name
-	@RequestMapping(value="{name}", method=RequestMethod.GET)
-	public ResponseEntity<Courses> getCourseByName(@PathVariable("name") String name) {
-		Courses courses = coursesRepository.findByName(name);
-		if(courses == null) {
-			return new ResponseEntity<Courses>(HttpStatus.NOT_FOUND);
-		} else {
-			return new ResponseEntity<Courses>(courses, HttpStatus.OK);
+	//return by Id
+		@RequestMapping(value="{id}", method=RequestMethod.GET)
+		public ResponseEntity<Courses> getCourseById(@PathVariable("id") String id) {
+			Courses courses = coursesRepository.findOne(id);
+			if(courses == null) {
+				return new ResponseEntity<Courses>(HttpStatus.NOT_FOUND);
+			} else {
+				return new ResponseEntity<Courses>(courses, HttpStatus.OK);
+			}
 		}
-	}
 	
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Courses> updateCourse(@Valid @RequestBody Courses courses, @PathVariable("id") String id) {

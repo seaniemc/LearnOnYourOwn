@@ -2,7 +2,8 @@
 var todoApp = angular.module('todoApp', [
     'ui.router',
     'jcs-autoValidate',
-	'angular-ladda'
+	'angular-ladda',
+    'ngYoutubeEmbed'
 ]);
 
 todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -34,7 +35,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
     var courseState = {
         name: 'course',
-        url: '/course/:name',
+        url: '/course/:id',
         templateUrl: 'app/views/course.html',
         controller: 'CoursesDetailsCtrl'
     };

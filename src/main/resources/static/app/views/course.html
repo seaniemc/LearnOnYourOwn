@@ -4,11 +4,23 @@
         <div class="col-4">
             
         </div>
-        <div class="col-8" ng-controller="CoursesDetailsCtrl"> 
-            <div>
-                <h2>{{loadCourse.name}}</h2>
-                <img  ng-src="{{loadCourse.picture}}" alt="" />
-                    
-            </div>
-        </div>
+            <div class="col-8" ng-controller="CoursesDetailsCtrl"> 
+                <div class="myContainer" >
+                    <h2>{{courses.name}}</h2>
+                    <div class="thumbnail">
+                        <img  ng-src="{{courses.picture}}" alt="" /> 
+                    </div>
+                    <div>
+                        <p>{{courses.description}}</p>
+                    </div> 
+                    <div class="myVideo" ng-repeat="video in courses">
+                        <ng-youtube-embed 
+                            video="video.video" 
+                            color="white"
+                            disablekb="true">
+                        </ng-youtube-embed>
+                    </div>  
+                </div>
+        </div> 
     </div>
+    <!--ng-model="getCourse()"-->

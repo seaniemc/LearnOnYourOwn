@@ -7,10 +7,7 @@
     <div class="row" ng-controller="CoursesCtrl">
         <ul class="col-md-12"  >
                 <li class="thumbnail" ng-repeat="course in courses" >
-                    <a ui-sref="course({name:course.name})">
-                        <div class="name">
-                            <h3>{{course.name}}</h3>
-                        </div>
+                    <a ui-sref="course({id:course.id})">
                         <img  ng-src="{{course.picture}}" alt="" />
                     </a>
                 </li>  
