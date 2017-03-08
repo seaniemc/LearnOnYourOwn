@@ -14,11 +14,8 @@
                         <p>{{courses.description}}</p>
                     </div> 
                     <div class="myVideo" ng-repeat="video in courses">
-                        <ng-youtube-embed 
-                            video="video.video" 
-                            color="white"
-                            disablekb="true">
-                        </ng-youtube-embed>
+                        <iframe width="560" height="315" ng-src="{{'video.video'}}" 
+                            frameborder="10" allowfullscreen></iframe>
                     </div>  
                 </div>
         </div> 

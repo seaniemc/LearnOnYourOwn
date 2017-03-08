@@ -152,3 +152,6 @@ img {
     font-size: 14px;
     font-weight: 400;
 }
+.myVideo iframe {
+    margin-bottom: 15px;
+}
