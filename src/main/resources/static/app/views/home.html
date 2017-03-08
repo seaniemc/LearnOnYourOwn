@@ -1,0 +1,16 @@
+<div class="container" ng-controller="CoursesCtrl as course">
+    <div class="jumbotron">
+        <h1><i class="fa fa-camera-retro"></i></span> Learn On Your Own</h1>
+        <p>we need to put some text in here</p>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-3 col-sm-6" ng-repeat="items in course.DocImageCollection">
+            <div class="thumbnail" ng-repeat="row in items">
+                <img src="http://i.imgur.com/qK42fUu.jpg">
+                <span ng-click=""> {{row.linkText}}</span>
+            </div>
+        </div>
+    </div>
+    
+</div>

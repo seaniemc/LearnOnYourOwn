@@ -1,12 +1,14 @@
+//angular.module('todoApp')
 todoApp.factory('Users', ['$http', function($http) {
 	return {
 		get: function() {
 			return $http.get('/api/users');
 		},
 
-		create: function(userData) {
-			console.log(userData);
-			return $http.post('/api/users', userData);
+		create: function(userData, callback) {
+      	$http.post('/api/users', userData).then(function (res) {
+            	return callback(res.data); 
+      		}, 'error')
 		},
 
 		delete: function(id) {
