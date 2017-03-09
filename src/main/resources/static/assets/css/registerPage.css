@@ -140,18 +140,21 @@ img {
 }
 
 .myContainer h1{
-    font-size: 22px;
+    font-size: 32px;
     font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 15px;
     /*padding-right: 75px;*/
 
 }
-.myContainer{
+.myContainer p{
     text-align: center;
     padding: 10%;
     font-family: Cabin;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 700;
 }
 .myVideo iframe {
     margin-bottom: 15px;
+    margin-top: 15px;
 }
