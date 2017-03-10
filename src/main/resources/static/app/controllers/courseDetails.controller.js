@@ -1,5 +1,6 @@
-todoApp.controller('CoursesDetailsCtrl', ['coursesFac','$scope','$stateParams', function CoursesCtrl(coursesFac, $scope, $stateParams){
+todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$stateParams', function CoursesCtrl(coursesFac, lecturerFac, $scope, $stateParams){
     
+    $scope.lecturer;
     $scope.courses;
     $scope.status;
 
@@ -16,6 +17,20 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','$scope','$stateParams', 
                 console.log($scope.status);
             });
     };
-    $scope.getCourse($scope.id);
-    console.log($scope.getCourse($scope.id));
+
+   //$scope.getCourse($scope.id);
+    //console.log($scope.getCourse($scope.id));
+
+    $scope.getLecturer = function(name){
+        lecturerFac.getLecturerByName(name)
+            .then(function (response) {
+                $scope.lecturer = response.data;
+                console.log($scope.lecturer);
+            }, function (error) {
+                $scope.status = 'Unable to load customer data: ' + error.message;
+                console.log($scope.status);
+            });
+    };
+   
+
 }]);

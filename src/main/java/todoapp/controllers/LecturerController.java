@@ -45,6 +45,16 @@ public class LecturerController {
 		}
 	}
 	
+	@RequestMapping(value="{name}", method=RequestMethod.GET)
+	public ResponseEntity<Lecturer> getLecturerByName(@PathVariable("name") String name) {
+		Lecturer lecturer = lecturerRepository.findByName(name);
+		if(lecturer == null) {
+			return new ResponseEntity<Lecturer>(HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<Lecturer>(lecturer, HttpStatus.OK);
+		}
+	}
+	
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Lecturer> updateLecturer(@Valid @RequestBody Lecturer lecturer, @PathVariable("id") String id) {
 		Lecturer lecturerData = lecturerRepository.findOne(id);

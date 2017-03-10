@@ -1,23 +1,30 @@
 <div class="container" >
 
-    <div class="row"  >
-        <div class="col-4">
-            
+    <div class="row" ng-controller="CoursesDetailsCtrl">
+        <div class="col-4" ng-init="getLecturer(courses.lecturer)">
+           <div>
+             <h3>{{lecturer.name}}</h3>
+             <div>
+                 <img class="img-circle"  ng-src="{{lecturer.picture}}" alt="" /> 
+             </div>
+                <p>{{lecturer.description}}</p>  
+           </div> 
+
         </div>
-            <div class="col-8" ng-controller="CoursesDetailsCtrl"> 
-                <div class="myContainer" >
-                    <h2>{{courses.name}}</h2>
-                    <div class="thumbnail">
-                        <img  ng-src="{{courses.picture}}" alt="" /> 
-                    </div>
-                    <div>
-                        <p>{{courses.description}}</p>
-                    </div> 
-                    <div class="myVideo" ng-repeat="video in courses">
-                        <iframe width="560" height="315" ng-src="{{'video.video'}}" 
-                            frameborder="10" allowfullscreen></iframe>
-                    </div>  
+        <div class="col-8" > 
+            <div class="myContainer" >
+                <h2>{{courses.name}}</h2>
+                <div class="thumbnail">
+                    <img  ng-src="{{courses.picture}}" alt="" /> 
                 </div>
+                <div>
+                    <p>{{courses.description}}</p>
+                </div> 
+                <div class="myVideo" ng-repeat="video in courses">
+                    <iframe width="560" height="315" ng-src="{{'video.video'}}" 
+                        frameborder="10" allowfullscreen></iframe>
+                </div>  
+            </div>
         </div> 
     </div>
     <!--ng-model="getCourse()"-->
