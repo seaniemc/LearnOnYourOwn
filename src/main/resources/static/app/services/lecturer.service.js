@@ -1,18 +1,19 @@
 todoApp.factory('lecturerFac', ['$http', function($http) {
+
 	var urlBase = '/api/lecturer';
-	var coursesFac = {};
+	var lecturerFac = {};
 	
-	coursesFac.getLecturer = function () {
-		return $http.get(urlBase);
-	};
+	// lecturerFac.getLecturer = function () {
+	// 	return $http.get(urlBase);
+	// };
 
-	coursesFac.getLecturerById = function (id) {
-		return $http.get(urlBase + '/' + id);
-	};
+	// lecturerFac.getLecturerById = function (id) {
+	// 	return $http.get(urlBase + '/' + id);
+	// };
 
-    coursesFac.getLecturerByName = function (name) {
+    lecturerFac.getLecturerByName = function (name) {
 		return $http.get(urlBase + '/' + name);
 	};
 
-	return coursesFac;
+	return lecturerFac;
 }]);
