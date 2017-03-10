@@ -3,7 +3,7 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     $scope.lecturer;
     $scope.courses;
     $scope.status;
-
+    $scope.name = $stateParams.lecturer;
     $scope.id = $stateParams.id;
     console.log($stateParams.id);
 
@@ -34,6 +34,6 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
                 console.log($scope.status);
             });
     };
-   
+   $scope.getLecturer($scope.name);
 
 }]);
