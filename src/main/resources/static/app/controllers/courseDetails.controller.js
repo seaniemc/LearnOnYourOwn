@@ -17,6 +17,7 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
             .then(function (response) {
                 $scope.courses = response.data;
                 console.log($scope.courses);
+                console.log($scope.courses.video);
             }, function (error) {
                 $scope.status = 'Unable to load course data: ' + error.message;
                 console.log($scope.status);

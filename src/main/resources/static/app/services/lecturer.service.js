@@ -3,9 +3,9 @@ todoApp.factory('lecturerFac', ['$http', function($http) {
 	var urlBase = '/api/lecturer';
 	var lecturerFac = {};
 	
-	// lecturerFac.getLecturer = function () {
-	// 	return $http.get(urlBase);
-	// };
+	lecturerFac.getLecturer = function () {
+		return $http.get(urlBase);
+	};
 
 	// lecturerFac.getLecturerById = function (id) {
 	// 	return $http.get(urlBase + '/' + id);

@@ -35,7 +35,24 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
     var courseState = {
         name: 'course',
-        url: '/course/:id?name',
+        url: '/course/:id',
+        // params: { 
+        //     // here we define default value for foo
+        //     // we also set squash to false, to force injecting
+        //     // even the default value into url
+        //     id: {
+        //       value: 'id',
+        //       squash: false,
+        //     },
+        //     // this parameter is now array
+        //     // we can pass more items, and expect them as []
+        //     name : { 
+        //       array : true,
+        //     },
+        //     // this param is not part of url
+        //     // it could be passed with $state.go or ui-sref 
+        //     hiddenParam: 'YES',
+        //   },
         templateUrl: 'app/views/course.html',
         controller: 'CoursesDetailsCtrl'
     };
