@@ -1,11 +1,14 @@
-todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$stateParams', function CoursesCtrl(coursesFac, lecturerFac, $scope, $stateParams){
+todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$state','$stateParams', function CoursesCtrl(coursesFac, lecturerFac, $scope, $state, $stateParams){
     
     $scope.lecturer;
     $scope.courses;
     $scope.status;
-    $scope.name = $stateParams.lecturer;
-    $scope.id = $stateParams.id;
-    console.log($stateParams.id);
+
+    var name = $stateParams.lecturer;
+    var id = $stateParams.id;
+
+    console.log(id);
+    console.log(name);
 
     //getCourse() method calls the coursesFac factory/service which calls the api endpoint and returns 
     //the course information based on the course id.
@@ -21,7 +24,7 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     };
 
     //passes the state paramater in to the method. The paramater is the course Id 
-    $scope.getCourse($scope.id);
+    $scope.getCourse(id);
   
 
     $scope.getLecturer = function(name){
@@ -34,6 +37,8 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
                 console.log($scope.status);
             });
     };
-   $scope.getLecturer($scope.name);
+   $scope.getLecturer(name);
 
+   $scope.state = $state.current
+    $scope.params = $stateParams; 
 }]);

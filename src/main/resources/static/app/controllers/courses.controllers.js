@@ -12,7 +12,9 @@ todoApp.controller('CoursesCtrl', ['coursesFac','$scope', function CoursesCtrl(c
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });
     
-    
+    $scope.go = function(){
+        $state.go('course', { id: 'courses', param2: 'baz'});
+    }
     // Courses.get()
     // .success(function(data) {
     //     $scope.courses = data;

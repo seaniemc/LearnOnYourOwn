@@ -35,7 +35,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
     var courseState = {
         name: 'course',
-        url: '/course/:id',
+        url: '/course/:id?name',
         templateUrl: 'app/views/course.html',
         controller: 'CoursesDetailsCtrl'
     };
@@ -58,3 +58,9 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 //    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 });
+
+todoApp.run(['$rootScope', '$state', '$stateParams',
+  function ($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+}])
