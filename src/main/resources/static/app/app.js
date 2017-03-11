@@ -33,6 +33,13 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'UserController'
     };
 
+     var lecturerState = {
+        name: 'lecturer',
+        url: '/lecturer',
+        templateUrl: 'app/views/lecturer.html',
+        controller: 'LecturerCtrl'
+    };
+
     var courseState = {
         name: 'course',
         url: '/course/:id',
@@ -62,6 +69,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         .state(homeState)
         .state(todoState)
         .state(registerState)
+        .state(lecturerState)
         .state(courseState)
          .state(loginState);
 
@@ -80,4 +88,4 @@ todoApp.run(['$rootScope', '$state', '$stateParams',
   function ($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
-}])
+}]);

@@ -1,13 +1,13 @@
 todoApp.controller('LecturerCtrl', ['coursesFac','lecturerFac','$scope', function LecturerCtrl(coursesFac, lecturerFac, $scope){
 
     $scope.status;
-    $scope.courses = null;
+    $scope.lecturers = null;
 
      
         lecturerFac.getLecturer()
             .then(function (response) {
-                 $scope.courses = response.data;
-                 console.log($scope.courses);
+                 $scope.lecturers = response.data;
+                 console.log($scope.lecturers);
             }, function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });

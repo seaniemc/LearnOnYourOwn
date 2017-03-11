@@ -125,8 +125,14 @@ span.input-group-addon i {
    position:relative;
    border: solid 3px #a45151;
 }
-
+.myList { 
+   display: inline-block;
+   width: 327px;
+   position:relative;
+   border: solid 3px #a45151;
+}
 img {
+    padding: 10%;
     min-height: 100%;
     min-width: 100%;
 }
@@ -157,4 +163,7 @@ img {
 .myVideo iframe {
     margin-bottom: 15px;
     margin-top: 15px;
+}
+.container{
+    padding-top: 20px;
 }
