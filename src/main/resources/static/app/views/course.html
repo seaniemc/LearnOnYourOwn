@@ -2,13 +2,13 @@
 
     <div class="row" class="col-md-12">
         <div class="col-md-4" >
-           <!--<div>
+           <div ng-repeat="lecturer in lecturers | filter: {lecturer: 'courses.lecturer'}">
              <h3>{{lecturer.name}}</h3>
              <div>
                  <img class="img-circle"  ng-src="{{lecturer.picture}}" alt="" /> 
              </div>
                 <p>{{lecturer.description}}</p>  
-           </div>-->
+           </div>
 
         </div>
         <div class="col-md-8"> 
@@ -20,13 +20,14 @@
                 <div>
                     <p>{{courses.description}}</p>
                 </div> 
-                    <div class="myVideo" ng-repeat="v in courses.video ">
+                    <!--<div class="myVideo" ng-repeat="v in courses.video ">
                         <iframe width="560" height="315" ng-src="{{'v.video'}}" 
                             frameborder="10" allowfullscreen></iframe>
-                    </div>
+                    </div>-->
             </div>
         </div> 
     </div>
 </div>
     <!--"getCourse()"   ng-repeat="videos in courses-->
-    <!--ng-model="getLecturer(courses.lecturer)"-->
+    <!--ng-model="getLecturer(courses.lecturer)"
+    -->

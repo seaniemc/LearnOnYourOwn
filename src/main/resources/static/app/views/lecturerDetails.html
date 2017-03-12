@@ -1,0 +1,38 @@
+<div class="container"  ng-controller="LecturerDetailsCtrl">
+
+    <div class="row" class="col-md-12">
+        <div class="col-md-6" >
+            <div>
+                <button type = "button" class = "btn btn-primary pull-left">
+                    Edit lecturer
+                </button>
+            </div> 
+           <div>
+             <h3>{{lecturer.name}}</h3>
+             <div>
+                 <img class="img-circle"  ng-src="{{lecturer.picture}}" alt="" /> 
+             </div>
+                <p>{{lecturer.description}}</p>  
+           </div>
+
+        </div>
+        <div class="col-md-6">
+            <div>
+                <button type = "button" class = "btn btn-primary pull-right">
+                    Edit Course
+                </button>
+            </div> 
+            <ul>
+               <li class="myList"  ng-repeat="course in courses | filter: {lecturer: 'lecturer.name'" >
+                <div >
+                    <h2>{{course.name}}</h2>
+                    <a ui-sref="course({id: course.id })">
+                        <img class="thumbnail" ng-src="{{course.picture}}" alt="" />
+                    </a>
+                    <p>{{course.description}}</p>
+                </div>
+            </li>  
+            </ul>
+        </div> 
+    </div>
+</div>

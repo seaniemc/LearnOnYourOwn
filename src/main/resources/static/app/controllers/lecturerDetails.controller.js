@@ -1,23 +1,23 @@
-todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$stateParams', function CoursesCtrl(coursesFac, lecturerFac, $scope,  $stateParams){
+todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$scope','$state','$stateParams', function LecturerDetailsCtrl(coursesFac, lecturerFac, $scope, $state, $stateParams){
     
-    $scope.lecturers;
+    $scope.lecturer;
     $scope.courses;
     $scope.status;
 
-   // var name = $stateParams.lecturer;
+    var name = $stateParams.lecturer;
     var id = $stateParams.id;
 
     console.log(id);
-    //console.log(name);
+    console.log(name);
 
     //getCourse() method calls the coursesFac factory/service which calls the api endpoint and returns 
     //the course information based on the course id.
-    $scope.getCourse = function(id){
-        coursesFac.getCourseById(id)
+    $scope.getCourse = function(){
+        coursesFac.getCourses()
             .then(function (response) {
                 $scope.courses = response.data;
                 console.log($scope.courses);
-                //console.log($scope.courses.video);
+               // console.log($scope.courses.video);
             }, function (error) {
                 $scope.status = 'Unable to load course data: ' + error.message;
                 console.log($scope.status);
@@ -25,23 +25,21 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     };
 
     //passes the state paramater in to the method. The paramater is the course Id 
-    $scope.getCourse(id);
+    $scope.getCourse();
   
 
-    $scope.getLecturer = function(){
-        lecturerFac.getLecturer()
+    $scope.getLecturer = function(id){
+        lecturerFac.getLecturerByName(name)
             .then(function (response) {
-                $scope.lecturers = response.data;
-                console.log($scope.lecturers);
+                $scope.lecturer = response.data;
+                console.log($scope.lecturer);
             }, function (error) {
                 $scope.status = 'Unable to load lecturer data: ' + error.message;
                 console.log($scope.status);
             });
     };
-   $scope.getLecturer();
+   $scope.getLecturer(name);
 
-   
-
-// $state,   $scope.state = $state.current
-// '$state',    $scope.params = $stateParams; 
+   $scope.state = $state.current
+    $scope.params = $stateParams; 
 }]);

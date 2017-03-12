@@ -1,4 +1,5 @@
 todoApp.factory('coursesFac', ['$http', function($http) {
+	
 	var urlBase = '/api/courses';
 	var coursesFac = {};
 	

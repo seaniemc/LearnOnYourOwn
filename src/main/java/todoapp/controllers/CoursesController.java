@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import todoapp.models.Courses;
+import todoapp.models.Lecturer;
 import todoapp.repositories.CoursesRepository;
 
 @RestController
@@ -35,6 +36,15 @@ public class CoursesController {
 	}
 
 	//return by Name
+//	@RequestMapping(value="{name}", method=RequestMethod.GET)
+//	public ResponseEntity<Courses> getLecturerByName(@PathVariable("name") String name) {
+//		Courses courses = coursesRepository.findByName(name);
+//		if(courses == null) {
+//			return new ResponseEntity<Courses>(HttpStatus.NOT_FOUND);
+//		} else {
+//			return new ResponseEntity<Courses>(courses, HttpStatus.OK);
+//		}
+//	}
 	//return by Id
 		@RequestMapping(value="{id}", method=RequestMethod.GET)
 		public ResponseEntity<Courses> getCourseById(@PathVariable("id") String id) {
