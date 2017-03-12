@@ -34,16 +34,16 @@ public class LecturerController {
 		return lecturerRepository.save(lecturer);
 	}
 
-//	//return by Id
-//	@RequestMapping(value="{id}", method=RequestMethod.GET)
-//	public ResponseEntity<Lecturer> getLecturerById(@PathVariable("id") String id) {
-//		Lecturer lecturer = lecturerRepository.findOne(id);
-//		if(lecturer == null) {
-//			return new ResponseEntity<Lecturer>(HttpStatus.NOT_FOUND);
-//		} else {
-//			return new ResponseEntity<Lecturer>(lecturer, HttpStatus.OK);
-//		}
-//	}
+	//return by Id
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	public ResponseEntity<Lecturer> getLecturerById(@PathVariable("id") String id) {
+		Lecturer lecturer = lecturerRepository.findOne(id);
+		if(lecturer == null) {
+			return new ResponseEntity<Lecturer>(HttpStatus.NOT_FOUND);
+		} else {
+			return new ResponseEntity<Lecturer>(lecturer, HttpStatus.OK);
+		}
+	}
 	
 	@RequestMapping(value="{name}", method=RequestMethod.GET)
 	public ResponseEntity<Lecturer> getLecturerByName(@PathVariable("name") String name) {

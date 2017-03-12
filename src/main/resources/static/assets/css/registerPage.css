@@ -124,6 +124,7 @@ span.input-group-addon i {
    width: 327px;
    height: 600px;
    position:relative;
+   background-color: #C0FCEF;
    border: solid 3px #a45151;
 }
 .myList p{
