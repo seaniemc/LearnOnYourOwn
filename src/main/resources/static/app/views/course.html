@@ -2,7 +2,7 @@
 
     <div class="row" class="col-md-12">
         <div class="col-md-4" >
-             <div>
+             <!--<div>
                 <button type = "button" class = "btn btn-primary pull-left" ng-click="myFilter(courses.lecturer)">
                     Lecturer
                 </button>
@@ -13,7 +13,7 @@
                  <img class="img-circle"  ng-src="{{lecturer.picture}}" alt="" /> 
              </div>
                 <p>{{lecturer.description}}</p>  
-           </div>
+           </div>-->
 
         </div>
         <div class="col-md-8"> 
@@ -25,15 +25,23 @@
                 <div>
                     <p>{{courses.description}}</p>
                 </div> 
-                    <!--<div class="myVideo" ng-repeat="v in courses.video ">
-                        <iframe width="560" height="315" ng-src="{{'v.video'}}" 
-                            frameborder="10" allowfullscreen></iframe>
-                    </div>-->
+                <div class="myVideo" ng-repeat="v in courses.video">
+                    <!--<iframe width="560" height="315" ng-src="{{v | GetYouTubeID}}" 
+                            frameborder="10" allowfullscreen>
+                    </iframe>-->
+                    <ng-youtube-embed 
+                        video="v | GetYouTubeID" 
+                        height="315"
+                        color="white"
+                        disablekb="true"
+                        end="20">
+                    </ng-youtube-embed>
+                </div>
             </div>
         </div> 
     </div>
 </div>
-    <!--"getCourse()"   ng-repeat="videos in courses-->
+    <!--"getCourse()" ng-repeat="v in courses.video"-->
     <!--ng-model="getLecturer(courses.lecturer)"
-   {lecturer: 'courses.lecturer'} 
+   {lecturer: 'courses.lecturer'}   ng-repeat="v in courses.video"
     ng-repeat="lecturer in lecturers | filter: { name: 'courses.lecturer' }:true"-->
