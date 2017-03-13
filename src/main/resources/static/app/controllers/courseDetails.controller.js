@@ -40,7 +40,21 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     };
    $scope.getLecturer();
 
-   
+   var lecturers =  $scope.getLecturer();
+   //console.log(lecturers);
+   $scope.myFilter = function (name, lecturers) { 
+        console.log(name);
+        for (var i = 0; i <= lecturers.length; i++) {
+            var obj = self.persons[i];
+            if (obj.name == name) {
+                return obj;
+                console.log(obj);
+            }
+        }
+    };
+
+			
+
 
 // $state,   $scope.state = $state.current
 // '$state',    $scope.params = $stateParams; 

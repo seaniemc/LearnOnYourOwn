@@ -2,7 +2,12 @@
 
     <div class="row" class="col-md-12">
         <div class="col-md-4" >
-           <div ng-repeat="lecturer in lecturers | filter: {lecturer: 'courses.lecturer'}">
+             <div>
+                <button type = "button" class = "btn btn-primary pull-left" ng-click="myFilter(courses.lecturer)">
+                    Lecturer
+                </button>
+            </div> 
+           <div>
              <h3>{{lecturer.name}}</h3>
              <div>
                  <img class="img-circle"  ng-src="{{lecturer.picture}}" alt="" /> 
@@ -30,4 +35,5 @@
 </div>
     <!--"getCourse()"   ng-repeat="videos in courses-->
     <!--ng-model="getLecturer(courses.lecturer)"
-    -->
+   {lecturer: 'courses.lecturer'} 
+    ng-repeat="lecturer in lecturers | filter: { name: 'courses.lecturer' }:true"-->
