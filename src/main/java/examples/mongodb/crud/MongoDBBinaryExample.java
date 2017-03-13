@@ -13,7 +13,7 @@ import com.mongodb.gridfs.GridFSInputFile;
 public class MongoDBBinaryExample {
 	public static void main(String[] args) throws IOException {
 		MongoClient mongo = new MongoClient("localhost", 27017);
-		DB db = mongo.getDB("Image");
+		DB db = mongo.getDB("GMIT");
 		// Save a image in DB
 		saveImageIntoMongoDB(db);
 		// Get a image from DB
@@ -23,10 +23,10 @@ public class MongoDBBinaryExample {
 		//save the image to the file system
 		saveToFileSystem(db);
 		// Delete images from DB
-		deleteImageFromMongoDB(db);
+		//deleteImageFromMongoDB(db);
 
 		// Verifying if image was deleted or not
-		getSingleImageExample(db);
+		//getSingleImageExample(db);
 	}
 
 	private static void saveImageIntoMongoDB(DB db) throws IOException {
