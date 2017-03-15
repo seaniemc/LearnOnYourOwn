@@ -6,14 +6,14 @@
                 <button type = "button" class = "btn btn-primary pull-left" ng-click="myFilter(courses.lecturer)">
                     Lecturer
                 </button>
-            </div> 
-           <div>
+            </div> -->
+           <div ng-repeat="lecturer in lecturers | filter: {name: courses.lecturer}">
              <h3>{{lecturer.name}}</h3>
              <div>
                  <img class="img-circle"  ng-src="{{lecturer.picture}}" alt="" /> 
              </div>
                 <p>{{lecturer.description}}</p>  
-           </div>-->
+           </div>
 
         </div>
         <div class="col-md-8"> 
@@ -26,7 +26,7 @@
                     <p>{{courses.description}}</p>
                 </div> 
                 <div class="myVideo" ng-repeat="v in courses.video">
-                    <!--<iframe width="560" height="315" ng-src="{{v | GetYouTubeID}}" 
+                    <!--<iframe width="560" height="315" ng-src="{{ v.video }}" 
                             frameborder="10" allowfullscreen>
                     </iframe>-->
                     <ng-youtube-embed 

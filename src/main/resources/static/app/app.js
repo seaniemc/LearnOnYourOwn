@@ -66,10 +66,11 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 //    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 });
+
 todoApp.filter("GetYouTubeID", function () {
     return function (text) {
         var video_id = text.split('v=')[1].split('&')[0];
-        console.log(video_id );
+        //console.log(video_id );
         return video_id;
         }
     });
