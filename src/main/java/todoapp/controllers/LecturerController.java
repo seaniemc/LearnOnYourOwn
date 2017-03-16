@@ -29,12 +29,14 @@ public class LecturerController {
 	}
 
 	//create statement
+	//@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(method=RequestMethod.POST)
 	public Lecturer createLecturer(@Valid @RequestBody Lecturer lecturer) {
 		return lecturerRepository.save(lecturer);
 	}
 
 	//return by Id
+	//@PreAuthorize("hasAuthority('USER 'ADMIN'')")
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public ResponseEntity<Lecturer> getLecturerById(@PathVariable("id") String id) {
 		Lecturer lecturer = lecturerRepository.findOne(id);
@@ -45,6 +47,7 @@ public class LecturerController {
 		}
 	}
 	
+	//@PreAuthorize("hasAuthority('USER ');
 	@RequestMapping(value="{name}", method=RequestMethod.GET)
 	public ResponseEntity<Lecturer> getLecturerByName(@PathVariable("name") String name) {
 		Lecturer lecturer = lecturerRepository.findByName(name);
@@ -54,7 +57,7 @@ public class LecturerController {
 			return new ResponseEntity<Lecturer>(lecturer, HttpStatus.OK);
 		}
 	}
-	
+	//@PreAuthorize("hasAuthority('ADMIN ');
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Lecturer> updateLecturer(@Valid @RequestBody Lecturer lecturer, @PathVariable("id") String id) {
 		Lecturer lecturerData = lecturerRepository.findOne(id);
@@ -72,6 +75,7 @@ public class LecturerController {
 	
 	
 	//delete by Id
+	//@PreAuthorize("hasAuthority('ADMIN ');
 	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteLecturer(@PathVariable("id") String id) {
 		lecturerRepository.delete(id);

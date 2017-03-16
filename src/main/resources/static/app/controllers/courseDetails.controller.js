@@ -18,9 +18,7 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
                 // var items;
                 response.data.video = JSON.parse(response.data.video);
                  console.log(response.data.video);
-                items = response.data.video;
                 $scope.courses = response.data;
-                
                // console.log(items);
                 // console.log($scope.courses.video);
             }, function (error) {
@@ -38,6 +36,10 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     $scope.getLecturer = function(){
         lecturerFac.getLecturer()
             .then(function (response) {
+                var courses;
+                response.data.courses = JSON.parse(response.data.courses);
+                courses =  response.data.courses;
+                 console.log(courses);
                 $scope.lecturers = response.data;
                 console.log("inside the function getLectuers" +$scope.lecturers);
             }, function (error) {
@@ -47,17 +49,5 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     };
    $scope.getLecturer();
 
-  var lecturers =  $scope.lecturers;
-   console.log("var lecturers" + lecturers);
-   $scope.myFilter = function (name, lecturers) { 
-        console.log(name);
-        for (var i = 0; i <= lecturers.length; i++) {
-            var obj = self.persons[i];
-            if (obj.name == name) {
-                return obj;
-                console.log(obj);
-            }
-        }
-    };
        
 }]);

@@ -21,12 +21,14 @@ public class TodoController {
 	public List<Todo> getAllTodos() {
 		return todoRepository.findAll();
 	}
-
+	
+	//@PreAuthorize("hasAuthority('USER')")
 	@RequestMapping(method=RequestMethod.POST)
 	public Todo createTodo(@Valid @RequestBody Todo todo) {
 		return todoRepository.save(todo);
 	}
-
+	
+	//@PreAuthorize("hasAuthority('USER ADMIN')")
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public ResponseEntity<Todo> getTodoById(@PathVariable("id") String id) {
 		Todo todo = todoRepository.findOne(id);
@@ -37,6 +39,7 @@ public class TodoController {
 		}
 	}
 	
+	//@PreAuthorize("hasAuthority('USER ADMIN')")
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Todo> updateTodo(@Valid @RequestBody Todo todo, @PathVariable("id") String id) {
 		Todo todoData = todoRepository.findOne(id);
@@ -49,6 +52,7 @@ public class TodoController {
 		return new ResponseEntity<Todo>(updatedTodo, HttpStatus.OK);
 	}
 	
+	//@PreAuthorize("hasAuthority('USER ADMIN')")
 	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteTodo(@PathVariable("id") String id) {
 		todoRepository.delete(id);

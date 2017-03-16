@@ -5,7 +5,7 @@
             <li class="myList"  ng-repeat="lecturer in lecturers" >
                 <div id="holder">
                     <h2>{{lecturer.name}}</h2>
-                    <a ui-sref="course({id: course.id })">
+                    <a ui-sref="lecturer({name: lecturer.name })">
                         <img class="img-circle" ng-src="{{lecturer.picture}}" alt="" />
                     </a>
                     <p>{{lecturer.description}}</p>

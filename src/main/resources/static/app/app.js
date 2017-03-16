@@ -35,7 +35,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
      var lecturerState = {
         name: 'lecturer',
-        url: '/lecturer',
+        url: '/lecturer/:id?name',
         templateUrl: 'app/views/lecturer.html',
         controller: 'LecturerCtrl'
     };

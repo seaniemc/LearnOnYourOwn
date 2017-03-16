@@ -2,11 +2,6 @@
 
     <div class="row" class="col-md-12">
         <div class="col-md-4" >
-             <!--<div>
-                <button type = "button" class = "btn btn-primary pull-left" ng-click="myFilter(courses.lecturer)">
-                    Lecturer
-                </button>
-            </div> -->
            <div ng-repeat="lecturer in lecturers | filter: {name: courses.lecturer}">
              <h3>{{lecturer.name}}</h3>
              <div>
@@ -14,7 +9,15 @@
              </div>
                 <p>{{lecturer.description}}</p>  
            </div>
-
+            </div >
+                <ul >
+                    <li  >
+                        <a ui-sref="course({id: course.id })">
+                            <h4>{{lecturer.courses}}</h4> 
+                        </a>
+                    </li>  
+                </ul>
+           </div>
         </div>
         <div class="col-md-8"> 
             <div class="myContainer" >

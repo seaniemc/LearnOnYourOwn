@@ -24,12 +24,14 @@ public class CoursesController {
 	CoursesRepository coursesRepository;
 	
 	//return all data
+	//@PreAuthorize("hasAuthority('AMONYOMOUS')")
 	@RequestMapping(method=RequestMethod.GET)
 	public List<Courses> getAllCourses() {
 		return coursesRepository.findAll();
 	}
 
 	//create statement
+	//@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(method=RequestMethod.POST)
 	public Courses createCourse(@Valid @RequestBody Courses courses) {
 		return coursesRepository.save(courses);
@@ -46,6 +48,7 @@ public class CoursesController {
 //		}
 //	}
 	//return by Id
+	//@PreAuthorize("hasAuthority('USER')")
 		@RequestMapping(value="{id}", method=RequestMethod.GET)
 		public ResponseEntity<Courses> getCourseById(@PathVariable("id") String id) {
 			Courses courses = coursesRepository.findOne(id);
@@ -55,7 +58,7 @@ public class CoursesController {
 				return new ResponseEntity<Courses>(courses, HttpStatus.OK);
 			}
 		}
-	
+	//@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Courses> updateCourse(@Valid @RequestBody Courses courses, @PathVariable("id") String id) {
 		Courses courseData = coursesRepository.findOne(id);
@@ -75,6 +78,7 @@ public class CoursesController {
 	
 	
 	//delete by Id
+	//@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteCourse(@PathVariable("id") String id) {
 		coursesRepository.delete(id);

@@ -24,6 +24,7 @@ public class UserController {
 	UserRepository userRepository;
 	
 	//return all data
+	//@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(method=RequestMethod.GET)
 	public List<User> getAllUsers() {
 		return userRepository.findAll();
@@ -37,6 +38,7 @@ public class UserController {
 	}
 
 	//return by Id
+	//@PreAuthorize("hasAuthority('USER and ADMIN')")
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public ResponseEntity<User> getUserById(@PathVariable("id") String id) {
 		User user = userRepository.findOne(id);
@@ -46,7 +48,7 @@ public class UserController {
 			return new ResponseEntity<User>(user, HttpStatus.OK);
 		}
 	}
-	
+	////@PreAuthorize("hasAuthority('USER')")
 	// @RequestMapping(value="{id}", method=RequestMethod.PUT)
 	// public ResponseEntity<User> updateUser(@Valid @RequestBody User user, @PathVariable("id") String id) {
 	// 	User userData = userRepository.findOne(id);
@@ -65,6 +67,7 @@ public class UserController {
 	
 	
 	//delete by Id
+	//@PreAuthorize("hasAuthority('USER ADMIN')")
 	@RequestMapping(value="{id}", method=RequestMethod.DELETE)
 	public void deleteUser(@PathVariable("id") String id) {
 		userRepository.delete(id);
