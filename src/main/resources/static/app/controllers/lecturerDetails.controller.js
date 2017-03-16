@@ -1,10 +1,9 @@
-todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$scope','$state','$stateParams', function LecturerDetailsCtrl(coursesFac, lecturerFac, $scope, $state, $stateParams){
+todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$scope','$stateParams', function LecturerDetailsCtrl(coursesFac, lecturerFac, $scope, $state, $stateParams){
     
     $scope.lecturer;
     $scope.courses;
     $scope.status;
 
-    var name = $stateParams.lecturer;
     var id = $stateParams.id;
 
     console.log(id);
@@ -29,7 +28,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$scope','
   
 
     $scope.getLecturer = function(id){
-        lecturerFac.getLecturerByName(name)
+        lecturerFac.getLecturerById(id)
             .then(function (response) {
                 $scope.lecturer = response.data;
                 console.log($scope.lecturer);
@@ -38,8 +37,6 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$scope','
                 console.log($scope.status);
             });
     };
-   $scope.getLecturer(name);
+   $scope.getLecturer(id);
 
-   $scope.state = $state.current
-    $scope.params = $stateParams; 
 }]);

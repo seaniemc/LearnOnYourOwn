@@ -32,17 +32,23 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         templateUrl: 'app/views/register.html',
         controller: 'UserController'
     };
+     var lecturerDetailsState = {
+        name: 'lecturerDetails',
+        url: '/lecturer/:id',
+        templateUrl: 'app/views/lecturerDetails.html',
+        controller: 'LecturerDetailsCtrl'
+    };
 
      var lecturerState = {
         name: 'lecturer',
-        url: '/lecturer/:id?name',
+        url: '/lecturer',
         templateUrl: 'app/views/lecturer.html',
         controller: 'LecturerCtrl'
     };
 
     var courseState = {
         name: 'course',
-        url: '/course/:id?name',
+        url: '/course/:id',
         templateUrl: 'app/views/course.html',
         controller: 'CoursesDetailsCtrl'
     };
@@ -53,6 +59,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         .state(todoState)
         .state(registerState)
         .state(lecturerState)
+        .state(lecturerDetailsState)
         .state(courseState)
          .state(loginState);
 
