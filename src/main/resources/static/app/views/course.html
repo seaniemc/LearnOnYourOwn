@@ -18,7 +18,7 @@
             <!-- HEADER AND TODO COUNT -->
                 <div class="col-sm-6 col-sm-offset-3">
                     <div class="jumbotron text-center row">
-                        <h2>You've got <span class="label label-info">{{ todos.length }}</span> things to do.</h2>
+                        <h2>Please leave a comment below <span class="label label-info">{{ todos.length }}</span> Comments</h2>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                             <div class="input-group">    
                                 <input type="text" 
                                 class="form-control input-text" 
-                                placeholder="I need to..." 
+                                placeholder=".........." 
                                 ng-model="formData.title" 
                                 autofocus required>
                                 <!-- createToDo() WILL CREATE NEW TODOS -->
@@ -84,17 +84,7 @@
                     <p>{{courses.description}}</p>
                 </div> 
                 <div class="myVideo" ng-repeat="v in courses.video">
-                    <!--<iframe width="560" height="315" ng-src="{{ v.video }}" 
-                            frameborder="10" allowfullscreen>
-                    </iframe>-->
-                    <!--<ng-youtube-embed 
-                        video="v | GetYouTubeID" 
-                        height="315"
-                        color="white"
-                        disablekb="true"
-                        end="20">
-                    </ng-youtube-embed>-->
-                    <youtube-video video-id="v | GetYouTubeID" ></youtube-video>
+                    <youtube-video video-id="v | GetYouTubeID" player-width="'450px'" player-height="'300px'"></youtube-video>
                 </div>
             </div>
         </div> 
