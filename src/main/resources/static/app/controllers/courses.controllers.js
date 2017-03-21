@@ -1,24 +1,15 @@
-todoApp.controller('CoursesCtrl', ['$scope', function CoursesCtrl($scope){
 
-    var test = this;
-    test.DocImageCollection = [
-      [{
-        linkText: 'Java'
-      }, {
-        linkText: 'C#'
-      }, {
-        linkText: 'Python'
-      }, {
-        linkText: 'Ruby'
-      }],
-      [{
-        linkText: 'Css And Html'
-      }, {
-        linkText: 'Jim'
-      }, {
-        linkText: 'Javascript'
-      }, {
-        linkText: 'Angular'
-      }, ]
-    ]
+todoApp.controller('CoursesCtrl', ['coursesFac','$scope', function CoursesCtrl(coursesFac, $scope){
+    $scope.status;
+    $scope.courses = null;
+
+     
+        coursesFac.getCourses()
+            .then(function (response) {
+                 $scope.courses = response.data;
+                 console.log($scope.courses);
+            }, function (error) {
+                $scope.status = 'Unable to load customer data: ' + error.message;
+            });
+
 }]);

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 target
+=======
+>>>>>>> courses-branch
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -22,4 +25,8 @@ blog/bin/
 #IntelliJ files
 **/*.iml
 **/.idea
+<<<<<<< HEAD
 **/.gradle
+=======
+**/.gradle
+>>>>>>> courses-branch

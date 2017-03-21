@@ -2,7 +2,9 @@
 var todoApp = angular.module('todoApp', [
     'ui.router',
     'jcs-autoValidate',
-	'angular-ladda'
+	'angular-ladda',
+    'youtube-embed',
+    'ngYoutubeEmbed'
 ]);
 
 todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -10,7 +12,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         name: 'home',
         url: '/',
         templateUrl: 'app/views/home.html',
-        controller: 'TodoController'
+        controller: 'CoursesCtrl'
     };
 
     var loginState = {
@@ -19,17 +21,49 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         templateUrl: 'app/views/login.html',
         controller: 'navigation'
     };
+    var todoState = {
+        name: 'todo',
+        url: '/todo',
+        templateUrl: 'app/views/todo.html',
+        controller: 'TodoController'
+    };
      var registerState = {
         name: 'register',
         url: '/register',
         templateUrl: 'app/views/register.html',
         controller: 'UserController'
     };
+     var lecturerDetailsState = {
+        name: 'lecturerDetails',
+        url: '/lecturer/:id',
+        templateUrl: 'app/views/lecturerDetails.html',
+        controller: 'LecturerDetailsCtrl'
+    };
+
+     var lecturerState = {
+        name: 'lecturer',
+        url: '/lecturer',
+        templateUrl: 'app/views/lecturer.html',
+        controller: 'LecturerCtrl'
+    };
+
+    var courseState = {
+        name: 'course',
+        url: '/course/:id',
+        templateUrl: 'app/views/course.html',
+        controller: 'CoursesDetailsCtrl'
+    };
+
 
     $stateProvider
         .state(homeState)
+        .state(todoState)
         .state(registerState)
+        .state(lecturerState)
+        .state(lecturerDetailsState)
+        .state(courseState)
          .state(loginState);
+
 
     $urlRouterProvider.otherwise('/');
     
@@ -40,3 +74,17 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 //    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 });
+
+todoApp.filter("GetYouTubeID", function () {
+    return function (text) {
+        var video_id = text.split('v=')[1].split('&')[0];
+        //console.log(video_id );
+        return video_id;
+        }
+    });
+
+// todoApp.run(['$rootScope', '$state', '$stateParams',
+//   function ($rootScope, $state, $stateParams) {
+//     $rootScope.$state = $state;
+//     $rootScope.$stateParams = $stateParams;
+// }]);

@@ -7,6 +7,7 @@ todoApp.controller('TodoController', ['$scope', 'Todos', function TodoController
     Todos.get()
     .success(function(data) {
         $scope.todos = data;
+        console.log(data);
 
     });
     // when submitting the add form, send the text to the spring API
