@@ -3,7 +3,7 @@ package todoapp.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "courses")
+@Document(collection = "photo.files")
 public class Images {
 	@Id
 	private String id;

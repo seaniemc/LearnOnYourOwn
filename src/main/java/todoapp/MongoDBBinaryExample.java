@@ -1,4 +1,4 @@
-package examples.mongodb.crud;
+package todoapp;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,12 +26,11 @@ public class MongoDBBinaryExample {
 		//deleteImageFromMongoDB(db);
 
 		// Verifying if image was deleted or not
-		//getSingleImageExample(db);
+		getSingleImageExample(db);
 	}
 
 	private static void saveImageIntoMongoDB(DB db) throws IOException {
 		String dbFileName = "keyboard";
-		;
 		File imageFile = new File("keyboard.jpg");
 		GridFS gfsPhoto = new GridFS(db, "photo");
 		GridFSInputFile gfsFile = gfsPhoto.createFile(imageFile);
@@ -40,10 +39,10 @@ public class MongoDBBinaryExample {
 	}
 
 	private static void getSingleImageExample(DB db) {
-		String newFileName = "keyboard.jpg";
-		;
+		String newFileName = "keyboard";
 		GridFS gfsPhoto = new GridFS(db, "photo");
 		GridFSDBFile imageForOutput = gfsPhoto.findOne(newFileName);
+		System.out.println("Printing image");
 		System.out.println(imageForOutput);
 	}
 

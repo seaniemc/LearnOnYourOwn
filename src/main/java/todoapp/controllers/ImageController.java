@@ -36,7 +36,7 @@
 //
 //	//return by Id
 //	@RequestMapping(value="{id}", method=RequestMethod.GET)
-//	public ResponseEntity<Images> getCourseById(@PathVariable("id") String id) {
+//	public ResponseEntity<Images> getImageById(@PathVariable("id") String id) {
 //		Images image = imageRepository.findOne(id);
 //		if(image == null) {
 //			return new ResponseEntity<Images>(HttpStatus.NOT_FOUND);
