@@ -11,6 +11,8 @@
 
 .page-container {
 	padding-top: 20px;
+	padding-left: 10px;
+	text-align: left;
 }
 
 .page-footer {

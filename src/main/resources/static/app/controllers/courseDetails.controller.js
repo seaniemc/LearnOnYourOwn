@@ -37,11 +37,10 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
         lecturerFac.getLecturer()
             .then(function (response) {
                 var courses;
-                response.data.courses = JSON.parse(response.data.courses);
-                courses =  response.data.courses;
+                //response.data.courses = JSON.parse(response.data.courses);
+               // courses =  response.data.courses;
                  console.log(courses);
                 $scope.lecturers = response.data;
-                console.log("inside the function getLectuers" +$scope.lecturers);
             }, function (error) {
                 $scope.status = 'Unable to load lecturer data: ' + error.message;
                 console.log($scope.status);
