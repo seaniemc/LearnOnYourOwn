@@ -4,7 +4,8 @@ var todoApp = angular.module('todoApp', [
     'jcs-autoValidate',
 	'angular-ladda',
     'youtube-embed',
-    'ngYoutubeEmbed'
+    'ngYoutubeEmbed',
+    'mgcrea.ngStrap'
 ]);
 
 todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
@@ -40,6 +41,13 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'LecturerDetailsCtrl'
     };
 
+     var lecturerEditState = {
+        name: 'lecturerEdit',
+        url: '/lecturer-edit/:id',
+        templateUrl: 'app/views/editLecturer.html',
+        controller: 'LecturerDetailsCtrl'
+    };
+
      var lecturerState = {
         name: 'lecturer',
         url: '/lecturer',
@@ -61,6 +69,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         .state(registerState)
         .state(lecturerState)
         .state(lecturerDetailsState)
+        .state(lecturerEditState)
         .state(courseState)
         .state(loginState);
 

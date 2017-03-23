@@ -1,4 +1,4 @@
-todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$scope','$stateParams', function LecturerDetailsCtrl(coursesFac, lecturerFac, $scope, $stateParams){
+todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','$scope','$stateParams', function LecturerDetailsCtrl(coursesFac, lecturerFac,$modal, $scope, $stateParams){
     
     $scope.lecturer;
     $scope.courses;
@@ -37,5 +37,13 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$scope','
     };
 
    $scope.getLecturer(id);
+
+   $scope.showEditModal = function(){
+        $scope.editModal = $modal({
+          scope: $scope,
+          template: 'app/views/editLecturer.html',
+          show: true
+        })
+   };
 
 }]);
