@@ -8,6 +8,7 @@ todoApp.factory('lecturerFac', ['$http', function($http) {
 	};
 
 	lecturerFac.getLecturerById = function (id) {
+		console.log(id);
 		return $http.get(urlBase + '/' + id);
 	};
 

@@ -23,7 +23,7 @@
                 </button>
             </div> 
             <ul>
-               <li class="myList"  ng-repeat="course in courses | filter: {lecturer: 'lecturer.name'" >
+               <li class="myList"  ng-repeat="course in courses | filter: {lecturer: lecturer.name}" >
                 <div >
                     <h2>{{course.name}}</h2>
                     <a ui-sref="course({id: course.id })">

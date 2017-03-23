@@ -35,7 +35,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     };
      var lecturerDetailsState = {
         name: 'lecturerDetails',
-        url: '/lecturer/:id',
+        url: '/lecturer-details/:id',
         templateUrl: 'app/views/lecturerDetails.html',
         controller: 'LecturerDetailsCtrl'
     };
@@ -62,7 +62,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         .state(lecturerState)
         .state(lecturerDetailsState)
         .state(courseState)
-         .state(loginState);
+        .state(loginState);
 
 
     $urlRouterProvider.otherwise('/');

@@ -4,11 +4,9 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     $scope.courses;
     $scope.status;
 
-   //var name = $stateParams.lecturer;
     var id = $stateParams.id;
 
     console.log(id);
-    //console.log(name);
 
     //getCourse() method calls the coursesFac factory/service which calls the api endpoint and returns 
     //the course information based on the course id.
@@ -19,8 +17,6 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
                 response.data.video = JSON.parse(response.data.video);
                  console.log(response.data.video);
                 $scope.courses = response.data;
-               // console.log(items);
-                // console.log($scope.courses.video);
             }, function (error) {
                 $scope.status = 'Unable to load course data: ' + error.message;
                 console.log($scope.status);
