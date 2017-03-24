@@ -41,12 +41,12 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'LecturerDetailsCtrl'
     };
 
-     var lecturerEditState = {
-        name: 'lecturerEdit',
-        url: '/lecturer-edit/:id',
-        templateUrl: 'app/views/editLecturer.html',
-        controller: 'LecturerDetailsCtrl'
-    };
+    //  var lecturerEditState = {
+    //     name: 'lecturerEdit',
+    //     url: '/lecturer-edit/:id',
+    //     templateUrl: 'app/views/editLecturer.html',
+    //     controller: 'LecturerDetailsCtrl'
+    // };
 
      var lecturerState = {
         name: 'lecturer',
@@ -69,7 +69,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         .state(registerState)
         .state(lecturerState)
         .state(lecturerDetailsState)
-        .state(lecturerEditState)
+        //.state(lecturerEditState)
         .state(courseState)
         .state(loginState);
 
