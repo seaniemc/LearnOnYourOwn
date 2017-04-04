@@ -17,7 +17,7 @@ todoApp.factory('lecturerFac', ['$http', function($http) {
 	};
 
 	lecturerFac.updateLecturer = function (lecturerData) {
-        return $http.put(urlBase + '/' + id, lecturerData)
+        return $http.put(urlBase + '/' + lecturerData.id, lecturerData)
     };
 	return lecturerFac;
 }]);

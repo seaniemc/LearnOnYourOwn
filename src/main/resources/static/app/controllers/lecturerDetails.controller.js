@@ -38,6 +38,23 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
 
    $scope.getLecturer(id);
 
+   $scope.edidtLecturer = function(lecturerEdit){
+       console.log("inside method "+lecturerEdit);
+
+        lecturerFac.updateLecturer(lecturerEdit)
+            .then(function(response){
+                $scope.status = 'Updated Lecturer!';
+                console.log($scope.status);
+                $state.go("lecturer");
+            }, function (error) {
+              $scope.status = 'Unable to update customer: ' + error.message;
+        });
+    
+    };
+   
+   
+    $scope.edidtLecturer(lecturerEdit);
+
    $scope.showEditModal = function(){
         $scope.editModal = $modal({
           scope: $scope,
