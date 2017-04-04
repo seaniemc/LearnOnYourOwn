@@ -1,9 +1,11 @@
 todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','$scope','$stateParams', function LecturerDetailsCtrl(coursesFac, lecturerFac,$modal, $scope, $stateParams){
-    
+    $scope.formData = {};
+
     $scope.lecturer;
     $scope.courses;
     $scope.status;
-
+    
+    var lecturerEdit = $scope.formData;
     var id = $stateParams.id;
 
     console.log(id);
