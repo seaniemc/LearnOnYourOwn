@@ -147,7 +147,10 @@ img {
    border: solid 3px #a45151;
 
 }
-
+.buttonTab .button{
+    padding: 20px;
+    /*padding-left: 10px;*/
+}
 .myContainer h1{
     font-size: 32px;
     font-weight: 700;

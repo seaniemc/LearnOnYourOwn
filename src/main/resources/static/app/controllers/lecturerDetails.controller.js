@@ -4,7 +4,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
     $scope.lecturer;
     $scope.courses;
     $scope.status;
-    
+
     var lecturerEdit = $scope.formData;
     var id = $stateParams.id;
 
@@ -27,6 +27,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
   
     //getLecturer() method calls the lecturerFac factory/service which calls the api endpoint and returns 
     //the lecturer information based on the course id.
+    
     $scope.getLecturer = function(id){
         lecturerFac.getLecturerById(id)
             .then(function (response) {
