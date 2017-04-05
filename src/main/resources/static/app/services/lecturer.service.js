@@ -16,6 +16,9 @@ todoApp.factory('lecturerFac', ['$http', function($http) {
 		return $http.get(urlBase + '/' + name);
 	};
 
+	lecturerFac.insertLecturer = function (lecturer) {
+        return $http.post(urlBase, lecturer);
+    };
 	lecturerFac.updateLecturer = function (lecturerData) {
         return $http.put(urlBase + '/' + lecturerData.id, lecturerData)
     };

@@ -6,7 +6,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
     $scope.courses;
     $scope.status;
 
-    var lecturerEdit = $scope.formData;
+    var lecturerDetails = $scope.formData;
     var id = $stateParams.id;
 
     console.log(id);
@@ -42,10 +42,10 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
 
    $scope.getLecturer(id);
 
-   $scope.edidtLecturer = function(lecturerEdit){
-       console.log("inside method "+lecturerEdit);
+   $scope.edidtLecturer = function(lecturerDetails){
+       console.log("inside method "+lecturerDetails);
 
-        lecturerFac.updateLecturer(lecturerEdit)
+        lecturerFac.updateLecturer(lecturerDetails)
             .then(function(response){
                 $scope.status = 'Updated Lecturer!';
                 console.log($scope.status);
@@ -56,9 +56,23 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
         });
     
     };
-   
-   
-    //$scope.edidtLecturer(lecturerEdit);
+    $scope.edidtLecturer(lecturerDetails);
+
+    $scope.createLecturer = function(lecturerDetails){
+       console.log("inside method "+lecturerDetails);
+
+        lecturerFac.insertLecturer(lecturerDetails)
+            .then(function(response){
+                $scope.status = 'Created Lecturer!';
+                console.log($scope.status);
+                $state.go("lecturer");
+                $scope.formData = {};
+            }, function (error) {
+              $scope.status = 'Unable to update customer: ' + error.message;
+        });
+    
+    };
+    
 
    $scope.showEditModal = function(){
         $scope.editModal = $modal({
@@ -71,7 +85,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
    $scope.showCreateLecModal = function(){
         $scope.createModal = $modal({
           scope: $scope,
-          template: 'app/views/editLecturer.html',
+          template: 'app/views/createLecForm.html',
           show: true
         })
    };
