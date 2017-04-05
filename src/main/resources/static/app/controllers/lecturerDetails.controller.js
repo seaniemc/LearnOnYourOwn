@@ -1,4 +1,5 @@
 todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','$scope','$stateParams', function LecturerDetailsCtrl(coursesFac, lecturerFac,$modal, $scope, $stateParams){
+
     $scope.formData = {};
 
     $scope.lecturer;
@@ -49,6 +50,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
                 $scope.status = 'Updated Lecturer!';
                 console.log($scope.status);
                 $state.go("lecturer");
+                $scope.formData = {};
             }, function (error) {
               $scope.status = 'Unable to update customer: ' + error.message;
         });
@@ -56,7 +58,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
     };
    
    
-    $scope.edidtLecturer(lecturerEdit);
+    //$scope.edidtLecturer(lecturerEdit);
 
    $scope.showEditModal = function(){
         $scope.editModal = $modal({
@@ -65,5 +67,14 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
           show: true
         })
    };
+
+   $scope.showCreateLecModal = function(){
+        $scope.createModal = $modal({
+          scope: $scope,
+          template: 'app/views/editLecturer.html',
+          show: true
+        })
+   };
+
 
 }]);
