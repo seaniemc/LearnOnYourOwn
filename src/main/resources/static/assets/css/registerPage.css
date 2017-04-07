@@ -126,12 +126,15 @@ span.input-group-addon i {
    position:relative;
    background-color: #C0FCEF;
    border: solid 3px #a45151;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-right: 15px;
 }
 .myList p{
     text-align: center;
     padding: 10%;
     font-family: Cabin;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
 }
 img {

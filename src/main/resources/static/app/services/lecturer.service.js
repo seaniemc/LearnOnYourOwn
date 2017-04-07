@@ -22,6 +22,7 @@ todoApp.factory('lecturerFac', ['$http', function($http) {
 	lecturerFac.updateLecturer = function (lecturerData) {
         return $http.put(urlBase + '/' + lecturerData.id, lecturerData)
     };
+	
 	lecturerFac.deleteLecturer = function (id) {
         return $http.delete(urlBase + '/' + id);
     };

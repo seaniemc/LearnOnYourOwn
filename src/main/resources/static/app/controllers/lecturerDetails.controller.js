@@ -73,7 +73,24 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
     
     };
     
+     $scope.deleteLecturer = function (id) {
+        lecturerFac.deleteLecturer(id)
+        .then(function (response) {
+            $scope.status = 'Deleted Customer! Refreshing customer list.';
+            for (var i = 0; i < $scope.lecturer.length; i++) {
+                var cust = $scope.lecturer[i];
+                if (cust.ID === id) {
+                    $scope.lecturer.splice(i, 1);
+                    break;
+                }
+            }
+            $scope.orders = null;
+        }, function (error) {
+            $scope.status = 'Unable to delete customer: ' + error.message;
+        });
+    };
 
+//============== Modals ========================
    $scope.showEditModal = function(){
         $scope.editModal = $modal({
           scope: $scope,
