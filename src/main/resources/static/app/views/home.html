@@ -1,16 +1,72 @@
-<div class="container" >
-    <div class="jumbotron">
-        <h1><i class="fa fa-camera-retro"></i></span> Learn On Your Own</h1>
-        <p>we need to put some text in here</p>
-    </div>
+ <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="tagline">Learn On Your Own</h1>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <div class="row" ng-controller="CoursesCtrl">
-        <ul class="col-md-12"  >
-                <li class="thumbnail" ng-repeat="course in courses" >
-                    <a ui-sref="course({id: course.id })">
-                        <img  ng-src="{{course.picture}}" alt="" />
-                    </a>
-                </li>  
-        </ul>
+
+
+    <!-- Page Content -->
+    <div class="container" >
+
+        <hr>
+
+        <div class="row about-contact">
+            <div class="col-sm-8">
+                <h2>About Us</h2>
+                <p>Welcome to "Learn on your own"! This is a repo for knowledge on coding in various languages and using various platforms. Please browse and feel free to send feedback using the Contact form</p>
+                <p>Browse by course or lecturer. We have bios for all our well trainined industry experts on the lecturers page.</p>
+                <p>
+                    <a ui-sref="contact" class="btn btn-default btn-lg" href="#">Contact Us &raquo;</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+              <img src="http://kitsch.ie/book.jpg" class="img-responsive" alt="">
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+        
+        <div class="row" ng-controller="LecturerCtrl">
+            <div ng-repeat="lecturer in lecturers | limitTo: 3">
+                <div class="clearfix" ng-if="$index % 3 == 0"></div>
+                <div class="col-sm-4">
+                    <img class="img-circle img-responsive img-center" ng-src="{{lecturer.picture}}" alt="">
+                    <h2>{{lecturer.name}}</h2>
+                    <p>{{lecturer.description}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+
+        <div class="row" ng-controller="CoursesCtrl">
+            <div ng-repeat="course in courses | limitTo: 3">
+                <div class="clearfix" ng-if="$index % 3 == 0"></div>
+                <div class="col-sm-4">
+                    <img class="img-circle img-responsive img-center" ng-src="{{course.picture}}" alt="">
+                    <h2>{{course.name}}</h2>
+                    <p>{{course.description}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Learn on Your Own 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
     </div>
-</div>

@@ -13,7 +13,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         name: 'home',
         url: '/',
         templateUrl: 'app/views/home.html',
-        controller: 'HomeCtrl'
+        controller: 'CoursesCtrl'
     };
 
     var loginState = {

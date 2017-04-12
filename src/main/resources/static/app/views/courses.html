@@ -1,0 +1,54 @@
+ <!-- Page Content -->
+<div ng-controller="CoursesCtrl">
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header" style="color: white; margin-top:20px;">Course of the Month
+                    <small style="color: white">{{courses[2].name}}</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" ng-src="{{courses[2].picture}}" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <h3>{{courses[2].name}}</h3>
+                <p>{{courses[2].description}}</p>
+                <h3>Project Details</h3>
+                <ul>
+                    <li>Lecturer: {{courses[2].lecturer}}</li>
+                    <li>Preview: 
+                      <div class="myVideo" ng-repeat="v in courses[2].video | limitTo: 1">
+                    <youtube-video video-id="v | GetYouTubeID" player-width="'220px'" player-height="'100px'"></youtube-video>
+                </div>
+                </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header" style="color: white">Courses List</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6" ng-repeat="course in courses" >
+                <a href="#">
+                    <img class="img-responsive portfolio-item" ng-src="{{course.picture}}" alt="">
+                    <h4>{{course.name}}</h4>
+                </a>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+</div>
