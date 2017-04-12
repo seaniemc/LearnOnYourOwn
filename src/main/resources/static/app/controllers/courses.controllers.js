@@ -4,12 +4,15 @@ todoApp.controller('CoursesCtrl', ['coursesFac','$scope', function CoursesCtrl(c
     $scope.courses = null;
 
      
-        coursesFac.getCourses()
+         coursesFac.getCourses()
             .then(function (response) {
+            		for (var i = response.data.length - 1; i >= 0; i--) {
+            			response.data[i].video = JSON.parse(response.data[i].video);
+            			console.log(response.data[i].video[0]);
+            		}
                  $scope.courses = response.data;
-                 console.log($scope.courses);
+
             }, function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });
-
 }]);
