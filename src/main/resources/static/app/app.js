@@ -9,11 +9,11 @@ var todoApp = angular.module('todoApp', [
 ]);
 
 todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
-    var homeState = {
+     var homeState = {
         name: 'home',
         url: '/',
         templateUrl: 'app/views/home.html',
-        controller: 'CoursesCtrl'
+        controller: 'HomeCtrl'
     };
 
     var loginState = {
@@ -55,6 +55,14 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'LecturerCtrl'
     };
 
+
+    var coursesState = {
+        name: 'courses',
+        url: '/courses',
+        templateUrl: 'app/views/courses.html',
+        controller: 'CoursesCtrl'
+    };
+
     var courseState = {
         name: 'course',
         url: '/course/:id',
@@ -71,8 +79,8 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         .state(lecturerDetailsState)
         //.state(lecturerEditState)
         .state(courseState)
+        .state(coursesState)
         .state(loginState);
-
 
     $urlRouterProvider.otherwise('/');
     
