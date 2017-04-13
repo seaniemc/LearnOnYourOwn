@@ -1,5 +1,5 @@
  <!-- Page Content -->
-<div ng-controller="CoursesCtrl">
+<div class="fakeContainer" ng-controller="CoursesCtrl">
         <!-- Portfolio Item Heading -->
         <div class="row">
             <div class="col-lg-12">
@@ -14,7 +14,9 @@
         <div class="row">
 
             <div class="col-md-8">
-                <img class="img-responsive" ng-src="{{courses[2].picture}}" alt="">
+                <a ui-sref="course({id: courses[2].id })">
+                    <img class="img-responsive" ng-src="{{courses[2].picture}}" alt="">
+                </a>
             </div>
 
             <div class="col-md-4">
@@ -42,7 +44,7 @@
             </div>
 
             <div class="col-sm-3 col-xs-6" ng-repeat="course in courses" >
-                <a href="#">
+                 <a ui-sref="course({id: course.id })">
                     <img class="img-responsive portfolio-item" ng-src="{{course.picture}}" alt="">
                     <h4>{{course.name}}</h4>
                 </a>

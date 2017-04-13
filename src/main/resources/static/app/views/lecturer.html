@@ -1,4 +1,39 @@
-<div class="container" >
+<div class="fakeContainer">
+    <div class="container" ng-controller="LecturerCtrl">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Our Lecturers
+                    <small>Our Lecturers are highly trained and skilled with exellent industry experience.</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row" >
+            <div ng-repeat="lecturer in lecturers"> 
+                <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                <div class="col-md-3 portfolio-item"  >
+                    <a ui-sref="lecturerDetails({id: lecturer.id })">
+                        <h2>{{lecturer.name}}</h2>
+                        <img class="img-responsive" ng-src="{{lecturer.picture}}" alt="">
+                        <h5>{{lecturer.description}}</h5>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--<div class="container" >
     
     <div class="row" ng-controller="LecturerCtrl">
         <ul class="col-md-12"  >
@@ -13,4 +48,4 @@
             </li>  
         </ul>
     </div>
-</div>
+</div>-->
