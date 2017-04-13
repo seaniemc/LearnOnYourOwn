@@ -38,11 +38,9 @@ footer {
     Bootstrap Overrides
 */
  .fakeContainer{
-   margin-top: 100px;
+   margin-top: 50px;
 }
-/*.header-div{
-    margin-bottom: 50px;
-}*/
+
 .navbar-inverse .navbar-nav>li>a {
     color: #000000;
 }
@@ -55,4 +53,31 @@ footer {
     background-color: #2ed0c8;
     border-color: #2ed0c8;
     
+}
+
+/*Lectuer page
+*/
+h5{
+    font-family: Cabin;
+    font-weight: 700;
+    color: black;
+}
+
+.col-md-4 h3{
+    font-family: Lato;
+    font-weight: 700;
+    text-align: left;
+}
+.col-md-4 p {
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 18;
+    text-align: left;
+}
+
+.col-md-4 li {
+    font-family: Cabin;
+    font-weight: 700;
+    font-size: 18;
+    text-align: left;
 }

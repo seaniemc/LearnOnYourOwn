@@ -85,7 +85,9 @@
                     <p>{{courses.description}}</p>
                 </div> 
                 <div class="myVideo" ng-repeat="v in courses.video">
+                    <div class="embed-responsive embed-responsive-16by9">
                     <youtube-video video-id="v | GetYouTubeID" player-width="'450px'" player-height="'300px'"></youtube-video>
+                    <div >
                 </div>
             </div>
         </div> 
