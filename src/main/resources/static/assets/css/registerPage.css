@@ -144,8 +144,8 @@ img {
 }
 .myContainer .thumbnail{
    display: inline-block;
-   width: 350px;
-   height: 400px;
+   /*width: 350px;
+   height: 400px;*/
    position:relative;
    border: solid 3px #a45151;
 

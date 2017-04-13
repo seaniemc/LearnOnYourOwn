@@ -34,6 +34,16 @@ footer {
     text-align: left;
 }
 
+p{
+    font-family: Cabin;
+    font-weight: 700;
+    color: black;
+}
+h2{
+    font-family: Lato;
+    font-weight: 700;
+    font-style: bold;
+}
 /**
     Bootstrap Overrides
 */
@@ -80,4 +90,13 @@ h5{
     font-weight: 700;
     font-size: 18;
     text-align: left;
+}
+
+/*course page*/
+.col-md-6 p{
+    text-align: center;
+    padding: 10%;
+    font-family: Cabin;
+    font-size: 20px;
+    font-weight: 700;
 }

@@ -36,9 +36,11 @@
             <div ng-repeat="lecturer in lecturers | limitTo: 3">
                 <div class="clearfix" ng-if="$index % 3 == 0"></div>
                 <div class="col-sm-4">
-                    <img class="img-circle img-responsive img-center" ng-src="{{lecturer.picture}}" alt="">
-                    <h2>{{lecturer.name}}</h2>
-                    <p>{{lecturer.description}}</p>
+                    <a ui-sref="lecturerDetails({id: lecturer.id })">
+                        <img class="img-circle img-responsive img-center" ng-src="{{lecturer.picture}}" alt="">
+                        <h2>{{lecturer.name}}</h2>
+                        <p>{{lecturer.description}}</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -49,9 +51,11 @@
             <div ng-repeat="course in courses | limitTo: 3">
                 <div class="clearfix" ng-if="$index % 3 == 0"></div>
                 <div class="col-sm-4">
-                    <img class="img-circle img-responsive img-center" ng-src="{{course.picture}}" alt="">
-                    <h2>{{course.name}}</h2>
-                    <p>{{course.description}}</p>
+                    <a ui-sref="course({id: course.id })">
+                        <img class="img-circle img-responsive img-center" ng-src="{{course.picture}}" alt="">
+                        <h2>{{course.name}}</h2>
+                        <p>{{course.description}}</p>
+                    </a>
                 </div>
             </div>
         </div>
