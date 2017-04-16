@@ -4,7 +4,7 @@
 **Student ID:** G00308668 <br />
 **Student Name:** Sean Mc Grath <br />
 **Student ID:** G00316649 <br />
-**Module:** Applided Project and Minor Dissertation<br />
+**Module:** Applied Project and Minor Dissertation<br />
 **Advised By:** Gerard Harrison <br />
 
 ___
@@ -37,7 +37,7 @@ Follow the steps below to deploy this project:
 7. If you do not have MongoChef then open a new command prompt and type 'mongo' into it. Execute the commands as instructed under the "Creating the database" heading.
 8. Open this project within Eclipse EE or IntelliJ by importing the project into the IDE as a maven project.
 9. Run TodoApplication.Java.
-10. Navigate to http://localhost:8080/ in your prefered browser.
+10. Navigate to http://localhost:8080/ in your preferred browser.
 
 
 ### About this project
@@ -62,9 +62,9 @@ Here is a list of the main technologies that we used:
 + Bootstrap
 
 Below is a diagram of the architecture of our application:
-
-<img src="img/SpringMVCAngular2.PNG" alt="System Design" width="700" height="450"/>
-
+<p align="center">
+	<img src="img/SpringMVCAngular2.PNG" alt="System Design" width="700" height="450"/>
+</p>
 
 Here is a list of the features in the application:
 + Courses page containing a list of all the available courses in the application.
@@ -95,7 +95,7 @@ Execute the following commands first
 	db.createCollection("todos")
 	
 	
-Once you have executed thos you can execute each of the command blocks between the headings.
+Once you have executed those, you can execute each of the command blocks between the headings.
 
 Sample for users:
 
@@ -122,4 +122,4 @@ Sample for users:
 	...
 	
 	
-	repeat this for each collection.
+repeat this for each collection.
