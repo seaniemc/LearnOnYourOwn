@@ -63,7 +63,7 @@ Here is a list of the main technologies that we used:
 
 Below is a diagram of the architecture of our application:
 
-<img src="img/SpringMVCAngular2.png" alt="System Design" width="600" height="400"/>
+<img src="img/SpringMVCAngular2.PNG" alt="System Design" width="800" height="550"/>
 
 ### Creating the database
 You must have completed step 4 of deployment details to run the database.
