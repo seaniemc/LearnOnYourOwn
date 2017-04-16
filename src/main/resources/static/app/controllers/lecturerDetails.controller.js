@@ -106,6 +106,14 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
           show: true
         })
    };
+   
+   $scope.showDeleteModal = function(){
+       $scope.deleteModal = $modal({
+         scope: $scope,
+         template: 'app/views/deleteLecturer.html',
+         show: true
+       })
+  };
 
 
 }]);
