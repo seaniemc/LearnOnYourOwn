@@ -1,0 +1,298 @@
+use LearnOnYourOwn
+
+db.createCollection("courses")
+db.createCollection("lecturer")
+db.createCollection("users")
+db.createCollection("todos")
+
+================================================
+					Users
+================================================
+
+db.users.insert([
+{
+"name":"Tim Miles",
+"username":"TMiles",
+"password":"TimM471",
+"role":"2"
+},
+{
+"name":"Logan Porter",
+"username":"Porter77",
+"password":"Fireman97",
+"role":"2"
+},
+{
+"name":"Daisy Patterson",
+"username":"Patty",
+"password":"DPattHype",
+"role":"2"
+},
+{
+"name":"Kathy McDonald",
+"username":"KMcD007",
+"password":"MickyD75",
+"role":"2"
+},
+{
+"name":"Mathew Dixon",
+"username":"Matty72",
+"password":"MDixie",
+"role":"2"
+},
+{
+"name":"Louise Cole",
+"username":"LouiseC22",
+"password":"LColey71",
+"role":"2"
+},
+{
+"name":"Rachel Day",
+"username":"RachelD",
+"password":"DayNight",
+"role":"2"
+},
+{
+"name":"Jordan Harvey",
+"username":"JHarvey",
+"password":"golfclub",
+"role":"2"
+},
+{
+"name":"Troy Castillo",
+"username":"TCastillo",
+"password":"Castiron99",
+"role":"2"
+},
+{
+"name":"Scott Griffin",
+"username":"Scottie",
+"password":"Ginger",
+"role":"2"
+},
+{
+"name":"Darlene Spencer",
+"username":"Darlene",
+"password":"Spence54",
+"role":"2"
+},
+{
+"name":"Joanne Carey",
+"username":"JCare",
+"password":"CareBear",
+"role":"2"
+},
+{
+"name":"Shawn Hicks",
+"username":"Hickey",
+"password":"Shawnie",
+"role":"2"
+},
+{
+"name":"Donald Ross",
+"username":"Rossie",
+"password":"DonaldDuck",
+"role":"2"
+},
+{
+"name":"Albert Barnett",
+"username":"Barnett",
+"password":"Barney",
+"role":"2"
+},
+{
+"name":"Liam Fernandez",
+"username":"LFernan",
+"password":"Tacos",
+"role":"2"
+},
+{
+"name":"Clara Newman",
+"username":"Clara22",
+"password":"NewWoman",
+"role":"2"
+},
+{
+"name":"Charlotte Gardner",
+"username":"Gardner11",
+"password":"Shovel",
+"role":"2"
+},
+{
+"name":"Teresa Rhodes",
+"username":"Teresa34",
+"password":"Horses",
+"role":"2"
+},
+{
+"name":"Gary McHugh",
+"username":"GaryMc",
+"password":"Hello",
+"role":"2"
+},
+{
+"name":"Sean McGrath",
+"username":"Seanie",
+"password":"collegesucks",
+"role":"2"
+}
+]
+)
+
+================================================
+					Courses
+================================================
+
+db.courses.insert([
+{
+"name":"C#",
+"lecturer":"Carl Henry",
+"picture":"http://kitsch.ie/csharp.png",
+"video":["https://www.youtube.com/watch?v=pSiIHe2uZ2w&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=nA2pSmBmvKg&index=2&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=udoMi4mGYYw&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=OXTK7cnphYY&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=Qs-LAYkp9YU&index=5&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=eIsGXwisKPE&index=6&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=SPE_HXHwJSU&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=QwygwfqOHsI&index=8&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=RQ0JHMGiobo&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=s2hHjpZaSyI&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=EiBCF7rYRtI&index=11&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=ETy3x4XeK9E&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=gvQziNULkdY&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=IQpss9YAc4g&index=14&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51", "https://www.youtube.com/watch?v=ZrjCG0Fu5Ew&index=15&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51"],
+"description":"This is a beginners course in C#, you will be thought all the basics, from variables to generics. This course is suited to someone who is entirely new to C# and wants to learn from the ground up!",
+"enroled":["Porter77", "Gardner11", "Rossie", "Darlene", "Clara22", "Hickey", "Scottie"]
+},
+{
+"name":"Java",
+"lecturer":"James Groden",
+"picture":"https://www.seeklogo.net/wp-content/uploads/2011/06/java-logo-vector.png",
+"video":["https://www.youtube.com/watch?v=B8gMEV8GKbg&index=1&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=uYnY_7V_l6I&index=2&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=vhV97hyV0fc&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=gmvBx1Aizu0&index=4&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=6O2H3ULoZpw&index=5&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=eBodvWUy2NQ&index=6&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=vEpY8bD6Qv8&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=McE6QTFt3uk&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=xXA7P1oUO8o&index=9&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=-BJiL92aI6M&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=lRuZlNcxO5M&index=11&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=77N8VGj7q4M&index=12&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=OT9SMMuWtg8&index=13&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=BQ6zTTFq1y8&index=14&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=FhqdMFJbsxs&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=k57PtwQKFoA&index=16&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=R86ObiKhMNc&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=_jhCvy8_lGE&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=gpCVpbyXALQ&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=gsKB1K7xVZ4&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH", "https://www.youtube.com/watch?v=M3oniJjRD7o&list=PLyRiRUsTyUXhUXoOPEdMZWhGpGeSQFZgH"],
+"description":"This is a comprehensive Java tutorial that takes you right from setting up the java environment to creating GUI's and web services, these tutorials covers a wide range of topics thatwould be useful to any level of java programmer",
+"enroled":["GaryMc", "Teresa34", "Clara22", "LouiseC22", "Matty72", "Patty", "KMcD007"]
+},
+{
+"name":"Angular2",
+"lecturer":"Oliver Kelly",
+"picture":"http://kitsch.ie/angular.png",
+"video":["https://www.youtube.com/watch?v=hXfigUyeHaY&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ", "https://www.youtube.com/watch?v=vc9n0j6-D2U&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ", "https://www.youtube.com/watch?v=h8surzS7LOo&index=3&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ", "https://www.youtube.com/watch?v=xGmEKaBgS_8&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ", "https://www.youtube.com/watch?v=uq4kLWPfosU&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ", "https://www.youtube.com/watch?v=pz9sbuMvhQU&index=6&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ", "https://www.youtube.com/watch?v=f8qBeaGe2S4&index=7&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ", "https://www.youtube.com/watch?v=bKWDKmHvF78&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ", "https://www.youtube.com/watch?v=MyqcsnbH820&index=9&list=PL6gx4Cwl9DGBYxWxJtLi8c6PGjNKGYGZZ"],
+"description":"Angular2 for beginners! These tutorials cover the basics of Angular2, from a brief over view to using functions like click events. These tutorials are desiged for someone who has no experience with Angular2.",
+"enroled":["Seanie", "TMiles", "TCastillo", "Barnett", "Rossie"]
+},
+{
+"name":"MYSQL",
+"lecturer":"Michael Dever",
+"picture":"https://www.opsview.com/sites/default/files/MySQL%20Server.png",
+"video":["https://www.youtube.com/watch?v=iP1wOSsKjW8&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=JyRWDQSQYNw&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=Iaj3jm2pC0Q&index=3&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=OtEkdeDmMFw&index=4&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=lGR6JuDdoPE&index=5&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=7iUQRYXPcVs&index=6&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=mTZjvfvn-L8&index=7&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=_ai3uQRKZL8&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=_VKhe_nuTCw&index=9&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=zQem0vL-kv8&index=10&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn", "https://www.youtube.com/watch?v=G-HwMi6tiII&list=PLS1QulWo1RIahlYDqHWZb81qsKgEvPiHn"],
+"description":"This MYSQL tutorial covers the very basics of MYSQL, from installing to querying. These tutorials are designed for new users of MYSQL who need a little help along the way.",
+"enroled":["Gardner11", "GaryMc", "RachelD", "MDixie", "JCare", "JHarvey", "Hickey"]
+},
+{
+"name":"Python",
+"lecturer":"Peter Grady",
+"picture":"http://python.net/~goodger/projects/graphics/python/newlogo-repro.png",
+"video":["https://www.youtube.com/watch?v=D48iCw3WWpI&list=PL82YdDfxhWsDJTq5f0Ae7M7yGcA26wevJ", "https://www.youtube.com/watch?v=19EfbO5D_8s&list=PL82YdDfxhWsDJTq5f0Ae7M7yGcA26wevJ", "https://www.youtube.com/watch?v=mQrci1kAwh4&index=3&list=PL82YdDfxhWsDJTq5f0Ae7M7yGcA26wevJ", "https://www.youtube.com/watch?v=6HWK6O4-28E&list=PL82YdDfxhWsDJTq5f0Ae7M7yGcA26wevJ", "https://www.youtube.com/watch?v=hrR0WrQMhSs&index=5&list=PL82YdDfxhWsDJTq5f0Ae7M7yGcA26wevJ", "https://www.youtube.com/watch?v=qO4ZN5uZSVg&list=PL82YdDfxhWsDJTq5f0Ae7M7yGcA26wevJ", "https://www.youtube.com/watch?v=0ury8KHQdL4&list=PL82YdDfxhWsDJTq5f0Ae7M7yGcA26wevJ", "https://www.youtube.com/watch?v=trOZBgZ8F_c&index=8&list=PL82YdDfxhWsDJTq5f0Ae7M7yGcA26wevJ"],
+"description":"This Python tutorial series covers the basics of using pythona nd its syntax. It is designed for beginners and is perfect to start you off on your Python module in school.",
+"enroled":["TMiles", "TCastillo", "Rossie", "Scottie", "LouiseC22"]
+},
+{
+"name":"JavaScript",
+"lecturer":"Ciara Smith",
+"picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png",
+"video":["https://www.youtube.com/watch?v=08yflg_VVO8&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=NfwqGwNMQeE&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=FxSkfmP-ZO0&index=3&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=6L0i7yTFiVg&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=IeZVaETHNuE&index=5&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=TnyTlw9UAqg&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=A_0_CoCr0H0&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=c8jV2V0w9hU&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=7rc8aDtVFvE&index=9&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=1vbe206bLEI&index=10&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa", "https://www.youtube.com/watch?v=qYjEIiErtrA&list=PLS1QulWo1RIZ4erAYe3k8zWA5jAu72mVa"],
+"description":"These tutorials cover the basics of JavaScript, from installing and configuring to for and while loops. These tutorials are designed for students who are new to JavaScript.",
+"enroled":["Seanie", "RachelD", "Teresa34", "Clara22", "Barnett", "KMcD007"]
+},
+{
+"name":"NodeJS",
+"lecturer":"Robin Walsh",
+"picture":"http://www.userlogos.org/files/logos/2690_fernandosantucci/expressjs.logo_.png?1415229799",
+"video":["https://www.youtube.com/watch?v=-u-j7uqU7sI&index=1&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=Imj8PgG3bZU&index=2&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=jiSFfpw3Btc&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=KsjrN-T3ZCs&index=4&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=kNHrHSTYs1U&index=5&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=uiZxziF4Ol8&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=IW2M8G8uJ6o&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=9JhvjhZLsEw&index=8&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=aNN1IKoEIdM&index=9&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=Fo7IRCjrxMk&index=10&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=foUHJo8ZTu0&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=_cnJcXwwQRA&index=12&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=pYOltVz7kL0&index=13&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=_D2w0voFlEk&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=54aol-U_1es&index=15&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=WH5qsGnFkBM&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=hdNuw0mk3xY&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=EY9uY1rxazk&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=RgAseumFyg8&index=19&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=vV28ilGSJGQ&index=20&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=7y1fjXouLCA&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_", "https://www.youtube.com/watch?v=UQVGvokR7hE&list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_"],
+"description":"This comprehensive NodeJS tutorial covers teh basics like installing and handling multiple requests to passing JSON data using Routes",
+"enroled":["Seanie", "GaryMc", "RachelD", "Scottie", "Hickey", "TCastillo", "KMcD007", "TCastillo", "Rossie"]
+},
+{
+"name":"MongoDB",
+"lecturer":"John Connolly",
+"picture":"http://blog.shajahanbasha.in/wp-content/uploads/2016/04/mongodb-logo-1.png",
+"video":["https://www.youtube.com/watch?v=GtD93tVZDX4&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=0ws3oIyqieY&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=NcW07q9FiAc&index=3&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=9RqMh282OGc&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=TCT5ulUzfR8&index=5&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=FH4XRY6h8Fg&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=1avpbijGmBw&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=0x7myKJqI44&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=-rcvh5aMyW8&index=9&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=dO3sWwJUv04&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=P0iQBL81qrw&index=11&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=vj_YkHxzF2s&index=12&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=J_L6r_v3hss&index=13&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP", "https://www.youtube.com/watch?v=ilcwtzi92Cs&list=PLS1QulWo1RIZtR6bncmSaH8fB81oRl6MP"],
+"description":"This MongoDB tutorial is designed for beginners it covers topics like inserting a document and indexing, these tutorials are perfect to get your college or work project off the ground!",
+"enroled":["GaryMc", "Gardner11", "Hickey", "TMiles", "KMcD007", "Porter77", "JHarvey", "MDixie", "Patty"]
+}
+]
+)
+
+================================================
+					Lecturers
+================================================
+
+db.lecturer.insert([
+{
+"name":"James Groden",
+"picture":"https://randomuser.me/api/portraits/men/0.jpg",
+"courses":["Java", "MYSQL"],
+"description":"James has a masters in Neural Networks and he has a keen interest in Computer Science and specialises in Java and MySQL",
+"role":"1"
+},
+{
+"name":"Carl Henry",
+"picture":"https://randomuser.me/api/portraits/men/74.jpg",
+"courses":["C#", "NodeJS"],
+"description":"Carl has a Computer Science degree from UCD and has a keen interest in Artificial Intelligence, he specialises in C# and NodeJS",
+"role":"1"
+},
+{
+"name":"Ciara Smith",
+"picture":"https://randomuser.me/api/portraits/women/76.jpg",
+"courses":["JavaScript", "MongoDB"],
+"description":"Ciara has a masters in Software Development and has worked in industry for IBM and Facebook, she specialises in JavaScript and MongoDB",
+"role":"1"
+},
+{
+"name":"Oliver Kelly",
+"picture":"https://randomuser.me/api/portraits/men/30.jpg",
+"courses":["Angular2"],
+"description":"Oliver has a degree in Software Development and is our youngest Lecturer, he specialises in Angular2",
+"role":"1"
+},
+{
+"name":"John Connolly",
+"picture":"https://randomuser.me/api/portraits/men/73.jpg",
+"courses":["Python", "MongoDB"],
+"description":"James has a doctorate in Space and Time Complexity and has a keen interest in Databases, he specialises in Python and MongoDB",
+"role":"1"
+},
+{
+"name":"Robin Walsh",
+"picture":"https://randomuser.me/api/portraits/women/52.jpg",
+"courses":["Java", "NodeJS"],
+"description":"Robin has a masters in Computer Science and has worked in Google for many years, she specialises in Java and NodeJS",
+"role":"1"
+},
+{
+"name":"Peter Grady",
+"picture":"https://randomuser.me/api/portraits/men/75.jpg",
+"courses":["C#", "Python"],
+"description":"James has a degree in Software Development and has a keen interest in Robotics, he has worked for Yahoo and Twitter, he specialises in C#",
+"role":"1"
+},
+{
+"name":"Michael Dever",
+"picture":"https://randomuser.me/api/portraits/men/85.jpg",
+"courses":["Python", "MYSQL"],
+"description":"Michael is a part time lecturer, he also works in his own company called Techie, Michael specialises in Python and MySQL",
+"role":"1"
+},
+{
+"name":"Barry Keegan",
+"picture":"https://randomuser.me/api/portraits/men/49.jpg",
+"courses":["JavaScript", "Angular2"],
+"description":"Barry has a masters in Multimedia and has a keen interest in Web applications, he specialises in JavaScript and Angular2",
+"role":"1"
+},
+{
+"name":"Christopher Tiernan",
+"picture":"https://randomuser.me/api/portraits/men/36.jpg",
+"courses":["C#"],
+"description":"Christopher has a degree in Computer Science as well as psychology and has a keen interest in Artificial Intelligence, he specialises in Ruby and C#",
+"role":"1"
+}
+]
+)
+
+=========================================================
+****Enter the statement below to delete the database****
+use LearnOnYourOwn
+
+db.dropDatabase()
+
+=========================================================

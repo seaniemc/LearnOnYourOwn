@@ -29,4 +29,8 @@ blog/bin/
 **/.gradle
 =======
 **/.gradle
+
+*.metadata
+*.vscode
+*.bowerrc
 >>>>>>> courses-branch
