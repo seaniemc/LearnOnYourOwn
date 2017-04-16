@@ -25,7 +25,7 @@ ___
 ### Deployment Details
 Follow the steps below to deploy this project:
 
-1. Download [Eclipse EE](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neonr) or [IntelliJ] (https://www.jetbrains.com/idea/download/#section=windows) for your desired operation system and run the installer.
+1. Download [Eclipse EE](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neonr) or [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) for your desired operation system and run the installer.
 2. Download the community edition of [MongoDB](https://www.mongodb.com/download-center#community) for your desired operation system and run the installer.
 3. (Optional) Download [Mongo Chef](https://studio3t.com/download/) for your desired operation system and run the installer. This is to execute the mongo script in.
 4. Open a command prompt and enter 'mongod'.
