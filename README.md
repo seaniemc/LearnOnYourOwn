@@ -43,12 +43,13 @@ Follow the steps below to deploy this project:
 ### Creating the database
 You must have completed step 4 of deployment details to run the database.
 Open up MongoChef or the command prompt as instructed in steps 6 and 7 of deployment details.
-In MongoChef, click the connect button in the top left corner, connect to localhost:27017
-Open the Intelishell
+In MongoChef, click the connect button in the top left corner, connect to localhost:27017.
+Open the Intelishell.
 
 The commands you need are located in MongoDBScript.txt in this repository.
 
 Execute the following commands first
+
 	```
 	use LearnOnYourOwn
 
@@ -61,6 +62,7 @@ Execute the following commands first
 Once you have executed thos you can execute each of the command blocks between the headings.
 
 Sample for users:
+
 	```
 	db.users.insert([
 	{
