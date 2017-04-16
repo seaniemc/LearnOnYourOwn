@@ -63,7 +63,18 @@ Here is a list of the main technologies that we used:
 
 Below is a diagram of the architecture of our application:
 
-<img src="img/SpringMVCAngular2.PNG" alt="System Design" width="600" height="450" align="middle"/>
+<img src="img/SpringMVCAngular2.PNG" alt="System Design" width="650" height="450" align="middle"/>
+
+
+Here is a list of the features in teh application:
++ Courses page containing a list of all the available courses in the application.
++ Individual course pages containing video tutorials, a comment section and the lecturer's details for that course.
++ Lecturer page that displays the details of all of the lecturer's.
++ Edit page for Courses, which lets you create, update and delete any courses details.
++ Edit page for Lecturer that allows you to create, update and delete any lecturer's information.
++ Sign up page which allows a user to sign up and stores the user's details in the database.
++ Login page that allows the user to sign in using their details.
++ The application also allows the user to sign in using their google account through the Google API.
 
 ### Creating the database
 You must have completed step 4 of deployment details to run the database.
