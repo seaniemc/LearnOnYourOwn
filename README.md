@@ -29,7 +29,7 @@ Follow the steps below to deploy this project:
 2. Download the community edition of [MongoDB](https://www.mongodb.com/download-center#community) for your desired operation system and run the installer.
 3. (Optional) Download [Mongo Chef](https://studio3t.com/download/) for your desired operation system and run the installer. This is to execute the mongo script in.
 4. Open a command prompt and enter 'mongod'.
-5. Download a zip file of this project and unzip it or download [Git] (https://git-scm.com/downloads) and execute the following command in the Git Bash Console
+5. Download a zip file of this project and unzip it or download [Git](https://git-scm.com/downloads) and execute the following command in the Git Bash Console
 	```
 	https://github.com/seaniemc/LearnOnYourOwn.git
 	```
@@ -39,6 +39,31 @@ Follow the steps below to deploy this project:
 9. Run TodoApplication.Java.
 10. Navigate to http://localhost:8080/ in your prefered browser.
 
+
+### About this project
+The purpose of this project was to create a web application containing video tutorials on various programming languages. This web application was designed to help people like students who are new to programming. We wanted to develop a platform where students who are struggling with programming can come and watch tutorials on a variety of subjects to help improve their skills. The users can also ask questions to the lecturers on the course page in a comment section.
+
+
+Our system will allow Users to register and log in to the application, from there they will see a variety of courses in various programming languages such as C\#, Java and Python. The user will be able to go to that course and watch a set of tutorials on that subject. They can leave comments on the course page to ask questions to the lecturer or give their feedback.
+
+
+This project involved research, learning and understanding many new frameworks such as Spring, MongoDB and AngularJS. We also had to understand the architecture of making an application with these technologies.
+
+We wanted to use this project as an opportunity to research and apply modern technologies that are commonly used in industry. We also wanted to use these technologies in an architecture that would be substantial for a Level 8 degree while creating a robust and well-designed system. We wanted to ensure that we used newer technologies that had the stability to be applied to our project. Our goal was to use technologies that were both new and that we believed would be used for years to come. This would aid us with our employability having used these technologies.
+
+
+Here is a list of the main technologies that we used:
++ MongoDB
++ Spring Boot Framework (using Java)
++ AngularJS
++ HTML5
++ CSS
++ JavaScript
++ Bootstrap
+
+Below is a diagram of the architecture of our application:
+
+<img src="img/SpringMVCAngular2.png" alt="System Design" width="600" height="400"/>
 
 ### Creating the database
 You must have completed step 4 of deployment details to run the database.
@@ -50,20 +75,20 @@ The commands you need are located in MongoDBScript.txt in this repository.
 
 Execute the following commands first
 
-	```
+	
 	use LearnOnYourOwn
 
 	db.createCollection("courses")
 	db.createCollection("lecturer")
 	db.createCollection("users")
 	db.createCollection("todos")
-	```
+	
 	
 Once you have executed thos you can execute each of the command blocks between the headings.
 
 Sample for users:
 
-	```
+	
 	db.users.insert([
 	{
 	"name":"Tim Miles",
@@ -84,6 +109,6 @@ Sample for users:
 	"role":"2"
 	},
 	...
-	```
+	
 	
 	repeat this for each collection.
