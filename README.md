@@ -63,10 +63,10 @@ Here is a list of the main technologies that we used:
 
 Below is a diagram of the architecture of our application:
 
-<img src="img/SpringMVCAngular2.PNG" alt="System Design" width="650" height="450" align="middle"/>
+<img src="img/SpringMVCAngular2.PNG" alt="System Design" width="700" height="450"/>
 
 
-Here is a list of the features in teh application:
+Here is a list of the features in the application:
 + Courses page containing a list of all the available courses in the application.
 + Individual course pages containing video tutorials, a comment section and the lecturer's details for that course.
 + Lecturer page that displays the details of all of the lecturer's.
