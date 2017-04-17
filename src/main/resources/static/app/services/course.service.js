@@ -15,6 +15,7 @@ todoApp.factory('coursesFac', ['$http', function($http) {
         return $http.post(urlBase, course);
     };
 	coursesFac.updateCourse = function (courseData) {
+		console.log(courseData);
         return $http.put(urlBase + '/' + courseData.id, courseData)
     };
 	

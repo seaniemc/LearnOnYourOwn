@@ -95,7 +95,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
    $scope.showEditModal = function(){
         $scope.editModal = $modal({
           scope: $scope,
-          template: 'app/views/editLecturer.html',
+          template: 'app/views/modalViews/editLecturer.html',
           show: true
         })
    };
@@ -103,7 +103,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
    $scope.showCreateLecModal = function(){
         $scope.createModal = $modal({
           scope: $scope,
-          template: 'app/views/createLecForm.html',
+          template: 'app/views/modalViews/createLecForm.html',
           show: true
         })
    };
@@ -111,7 +111,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
    $scope.showDeleteModal = function(){
        $scope.deleteModal = $modal({
          scope: $scope,
-         template: 'app/views/deleteLecturer.html',
+         template: 'app/views/modalViews/deleteLecturer.html',
          show: true
        })
   };

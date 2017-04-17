@@ -1,22 +1,21 @@
-
 <div id="createModal"
      class="modal"
-     role="dialog" ng-controller="LecturerDetailsCtrl">
+     role="dialog" ng-controller="CoursesDetailsCtrl">
     <div class="modal-dialog" >
         <div class="modal-content" >
             <div class="modal-header" >
-                <h4 class="modal-title" >Delete Lecturer</h4 >
+                <h4 class="modal-title" >Delete Course</h4 >
             </div >
             <div class="modal-body" >
-                <form ng-submit="edidtLecturer(lecturer)"
+                <form ng-submit="deleteCourse(courses.id)"
                     name="lecturerForm"
                       class="form-horizontal"
                       novalidate >
                       <div>
-                      <p align="center">This will permanently delete this lecturer. Are you sure?</p>
+                      <p align="center">This will permanently delete this Course. Are you sure?</p>
                          <div class="modal-footer">
-                            <button type="submit" class ="btn btn-danger pull-left" ng-click="deleteLecturer(lecturer.id)" >Delete </button>
-                            <button type="button" class="btn btn-secondary" ng-click="deleteModal.hide()" >Close</button>
+                            <button type="submit" class ="btn btn-danger pull-left">Delete </button>
+                            <button type="button" class="btn btn-secondary" ng-click="deleteModal.hide()">Close</button>
                         </div>
                     </div>
                 </form>

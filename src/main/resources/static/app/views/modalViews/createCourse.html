@@ -7,27 +7,18 @@
                 <h4 class="modal-title" >Update Course</h4 >
             </div >
             <div class="modal-body" >
-                <form ng-submit="edidtCourse(courses)"
+                <form ng-submit="createCourse(courses)"
                     name="courseForm"
                       class="form-horizontal"
                       novalidate >
-                      <div class="form-group" >
-                            <label class="col-sm-2 control-label" >ID</label >
-                            <div class="col-sm-10" >
-                                <input type="text"
-                                    class="form-control"
-                                    name="id"
-                                    ng-model="courses.id"
-                                    required />
-                            </div >
-                        </div >
+
                         <div class="form-group" >
                             <label class="col-sm-2 control-label" >Name</label >
                             <div class="col-sm-10" >
                                 <input type="text"
                                     class="form-control"
                                     name="name"
-                                    ng-model="courses.name"
+                                    ng-model="cour.name"
                                     required />
                             </div >
                         </div >
@@ -37,7 +28,7 @@
                                 <input type="url"
                                     name="url"
                                     class="form-control"
-                                    ng-model="courses.picture"
+                                    ng-model="cour.picture"
                                     required />
                             </div >
                         </div >
@@ -47,7 +38,17 @@
                                 <input type="text"
                                     class="form-control"
                                     name="photo"
-                                    ng-model="courses.description"
+                                    ng-model="cour.description"
+                                        />
+                            </div >
+                        </div >
+                        <div class="form-group" >
+                            <label class="col-sm-2 control-label" >Lecturer</label >
+                            <div class="col-sm-10" >
+                                <input type="text"
+                                    class="form-control"
+                                    name="photo"
+                                    ng-model="cour.Lecturer"
                                         />
                             </div >
                         </div >
@@ -57,14 +58,14 @@
                                 <input type="text"
                                     class="form-control"
                                     name="photo"
-                                    ng-model="courses.video"
+                                    ng-model="cour.video"
                                         />
                             </div >
                         </div >
                       <div>
                          <div class="modal-footer">
                             <button type="submit" class ="btn btn-primary pull-left">Save changes </button>
-                            <button type="button" class="btn btn-secondary" ng-click="editCourModal.hide()" >Close</button>
+                            <button type="button" class="btn btn-secondary" ng-click="createCourModal.hide()" >Close</button>
                         </div>
                     </div>
                 </form>

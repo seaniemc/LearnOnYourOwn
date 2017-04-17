@@ -72,26 +72,26 @@
                         </form>
                     </div>    
                 </div>
-        </div>    
-    </div>
+            </div>    
         </div>
+    </div>
         <div class="col-md-6"> 
-            <div class="myContainer" >
-                <a ui-sref="courseDetails({id: courses.id })">
-                    <h2>{{courses.name}}</h2>
-                    <div >
-                        <img class="img-responsive" ng-src="{{courses.picture}}" alt="" /> 
-                    </div>
-                    <div>
-                        <p>{{courses.description}}</p>
-                    </div> 
-                </a>
-                <div class="myVideo" ng-repeat="v in courses.video">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <youtube-video video-id="v | GetYouTubeID" player-width="'450px'" player-height="'300px'"></youtube-video>
-                    <div >
+        <div class="myContainer" >
+            <a ui-sref="courseDetails({id: courses.id })">
+                <h2>{{courses.name}}</h2>
+                <div >
+                    <img class="img-responsive" ng-src="{{courses.picture}}" alt="" /> 
                 </div>
+                <div>
+                    <p>{{courses.description}}</p>
+                </div> 
+            </a>
+            <div class="myVideo" ng-repeat="v in courses.video">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <youtube-video video-id="v | GetYouTubeID" player-width="'450px'" player-height="'300px'"></youtube-video>
+                <div >
             </div>
+        </div>
         </div> 
     </div>
 </div>

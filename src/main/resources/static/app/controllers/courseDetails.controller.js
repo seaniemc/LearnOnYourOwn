@@ -42,7 +42,7 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
 
    //==============Update delete and create================
    $scope.edidtCourse = function(courseDetails){
-
+        console.log(courseDetails);
         coursesFac.updateCourse(courseDetails)
             .then(function(response){
                 $scope.status = 'Updated Course!';
@@ -54,29 +54,46 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
         });
     
     };
-   // $scope.edidtCourse(courseDetails);
+    //$scope.edidtCourse(courseDetails);
 
-//     $scope.createCourse = function(courseDetails){
-//        console.log("inside method "+courseDetails);
+    $scope.createCourse = function(courseDetails){
+       console.log("inside method "+courseDetails);
 
-//         coursesFac.insertCourse(courseDetails)
-//             .then(function(response){
-//                 $scope.status = 'Created Course!';
-//                 console.log($scope.status);
-//                 $state.go("courses");
-//                 $scope.formData = {};
-//             }, function (error) {
-//               $scope.status = 'Unable to create course: ' + error.message;
-//         });
+        coursesFac.insertCourse(courseDetails)
+            .then(function(response){
+                $scope.status = 'Created Course!';
+                console.log($scope.status);
+                $state.go("courses");
+                $scope.formData = {};
+            }, function (error) {
+              $scope.status = 'Unable to create course: ' + error.message;
+        });
     
-//     };
+    };
+
+    $scope.deleteCourse = function (id) {
+        coursesFac.deleteLecturer(id)
+        .then(function (response) {
+            $scope.status = 'Deleted Course! Refreshing customer list.';
+            for (var i = 0; i < $scope.courses.length; i++) {
+                var cour = $scope.courses[i];
+                if (cour.ID === id) {
+                    $scope.courses.splice(i, 1);
+                    break;
+                }
+            }
+            //$scope.orders = null;
+        }, function (error) {
+            $scope.status = 'Unable to delete customer: ' + error.message;
+        });
+    };
 
 
    //============== Modals ========================
    $scope.showCourseEditModal = function(){
         $scope.editCourModal = $modal({
           scope: $scope,
-          template: 'app/views/editCourse.html',
+          template: 'app/views/modalViews/editCourse.html',
           show: true
         })
    };
@@ -84,7 +101,7 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
    $scope.showCreateCourseModal = function(){
         $scope.createCourModal = $modal({
           scope: $scope,
-          template: 'app/views/createCourse.html',
+          template: 'app/views/modalViews/createCourse.html',
           show: true
         })
    };
@@ -92,7 +109,7 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
    $scope.showDeleteCourseModal = function(){
        $scope.deleteCourModal = $modal({
          scope: $scope,
-         template: 'app/views/deleteLecturer.html',
+         template: 'app/views/modalViews/deleteCourse.html',
          show: true
        })
   };
