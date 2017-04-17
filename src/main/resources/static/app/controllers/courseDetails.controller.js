@@ -1,5 +1,7 @@
-todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$sce','$stateParams', function CoursesCtrl(coursesFac, lecturerFac, $scope, $sce, $stateParams){
-    
+
+todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$sce','$modal', '$stateParams', function CoursesDetailsCtrl(coursesFac, lecturerFac, $scope, $sce, $modal, $stateParams){
+    $scope.formData ={};
+
     $scope.lecturers;
     $scope.courses;
     $scope.status;
@@ -38,25 +40,57 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     };
    $scope.getLecturer();
 
+   //==============Update delete and create================
+   $scope.edidtCourse = function(courseDetails){
+
+        coursesFac.updateCourse(courseDetails)
+            .then(function(response){
+                $scope.status = 'Updated Course!';
+                console.log($scope.status);
+                $state.go("lecturer");
+                $scope.formData = {};
+            }, function (error) {
+              $scope.status = 'Unable to update customer: ' + error.message;
+        });
+    
+    };
+   // $scope.edidtCourse(courseDetails);
+
+//     $scope.createCourse = function(courseDetails){
+//        console.log("inside method "+courseDetails);
+
+//         coursesFac.insertCourse(courseDetails)
+//             .then(function(response){
+//                 $scope.status = 'Created Course!';
+//                 console.log($scope.status);
+//                 $state.go("courses");
+//                 $scope.formData = {};
+//             }, function (error) {
+//               $scope.status = 'Unable to create course: ' + error.message;
+//         });
+    
+//     };
+
+
    //============== Modals ========================
    $scope.showCourseEditModal = function(){
-        $scope.editModal = $modal({
+        $scope.editCourModal = $modal({
           scope: $scope,
-          template: 'app/views/editLecturer.html',
+          template: 'app/views/editCourse.html',
           show: true
         })
    };
 
    $scope.showCreateCourseModal = function(){
-        $scope.createModal = $modal({
+        $scope.createCourModal = $modal({
           scope: $scope,
-          template: 'app/views/createLecForm.html',
+          template: 'app/views/createCourse.html',
           show: true
         })
    };
    
    $scope.showDeleteCourseModal = function(){
-       $scope.deleteModal = $modal({
+       $scope.deleteCourModal = $modal({
          scope: $scope,
          template: 'app/views/deleteLecturer.html',
          show: true
