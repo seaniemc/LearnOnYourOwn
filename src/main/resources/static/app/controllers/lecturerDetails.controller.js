@@ -32,6 +32,7 @@ todoApp.controller('LecturerDetailsCtrl', ['coursesFac','lecturerFac','$modal','
     $scope.getLecturer = function(id){
         lecturerFac.getLecturerById(id)
             .then(function (response) {
+                 response.data.courses = JSON.parse(response.data.courses);
                 $scope.lecturer = response.data;
                 console.log($scope.lecturer);
             }, function (error) {

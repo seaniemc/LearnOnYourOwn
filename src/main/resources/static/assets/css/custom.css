@@ -93,10 +93,18 @@ h5{
 }
 
 /*course page*/
-.col-md-6 p{
+.col-md-6 {
     text-align: center;
     padding: 10%;
     font-family: Cabin;
     font-size: 20px;
     font-weight: 700;
+}
+
+/*lecturerDetails*/
+ /*.col-md-6{
+    text-align: center;
+}*/
+.row{
+    text-align: center;
 }

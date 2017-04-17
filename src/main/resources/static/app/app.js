@@ -41,6 +41,13 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'LecturerDetailsCtrl'
     };
 
+    var courseDetailsState = {
+        name: 'courseDetails',
+        url: '/course-details/:id',
+        templateUrl: 'app/views/coursesDetails.html',
+        controller: 'CoursesDetailsCtrl'
+    };
+
     //  var lecturerEditState = {
     //     name: 'lecturerEdit',
     //     url: '/lecturer-edit/:id',
@@ -77,7 +84,7 @@ todoApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         .state(registerState)
         .state(lecturerState)
         .state(lecturerDetailsState)
-        //.state(lecturerEditState)
+        .state(courseDetailsState)
         .state(courseState)
         .state(coursesState)
         .state(loginState);
@@ -100,8 +107,3 @@ todoApp.filter("GetYouTubeID", function () {
         }
     });
 
-// todoApp.run(['$rootScope', '$state', '$stateParams',
-//   function ($rootScope, $state, $stateParams) {
-//     $rootScope.$state = $state;
-//     $rootScope.$stateParams = $stateParams;
-// }]);

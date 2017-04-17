@@ -26,16 +26,10 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     //passes the state paramater in to the method. The paramater is the course Id 
     $scope.getCourse(id);
 
-    
-    
 
     $scope.getLecturer = function(){
         lecturerFac.getLecturer()
             .then(function (response) {
-                var courses;
-                //response.data.courses = JSON.parse(response.data.courses);
-               // courses =  response.data.courses;
-                 console.log(courses);
                 $scope.lecturers = response.data;
             }, function (error) {
                 $scope.status = 'Unable to load lecturer data: ' + error.message;
@@ -44,5 +38,28 @@ todoApp.controller('CoursesDetailsCtrl', ['coursesFac','lecturerFac','$scope','$
     };
    $scope.getLecturer();
 
-       
+   //============== Modals ========================
+   $scope.showCourseEditModal = function(){
+        $scope.editModal = $modal({
+          scope: $scope,
+          template: 'app/views/editLecturer.html',
+          show: true
+        })
+   };
+
+   $scope.showCreateCourseModal = function(){
+        $scope.createModal = $modal({
+          scope: $scope,
+          template: 'app/views/createLecForm.html',
+          show: true
+        })
+   };
+   
+   $scope.showDeleteCourseModal = function(){
+       $scope.deleteModal = $modal({
+         scope: $scope,
+         template: 'app/views/deleteLecturer.html',
+         show: true
+       })
+  };
 }]);

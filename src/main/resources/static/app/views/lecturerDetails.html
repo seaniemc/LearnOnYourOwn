@@ -1,53 +1,43 @@
 <div class="container"  ng-controller="LecturerDetailsCtrl">
 
-<div class="row" class="col-md-12">
-        <div class="buttonTab">
-            <button type = "button" class = "btn btn-primary pull-left" ng-click="showEditModal()">
-                Edit lecturer
-            </button>
-            <button type = "button" class = "btn btn-primary" ng-click="showCreateLecModal()">
-                Create lecturer
-            </button>
-            <button type = "button" class = "btn btn-danger pull-right	" ng-click="showDeleteModal()">
-                Delete lecturer
-            </button>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header" style="color: white; margin-top:20px;">Lecturer's Profile:
-                    <small style="color: white">{{lecturer.name}}</small>
-                </h1>
+    <div class="row" class="col-md-12">
+            <div class="buttonTab">
+                <button type = "button" class = "btn btn-primary pull-left" ng-click="showEditModal()">
+                    Edit lecturer
+                </button>
+                <button type = "button" class = "btn btn-primary" ng-click="showCreateLecModal()">
+                    Create lecturer
+                </button>
+                <button type = "button" class = "btn btn-danger pull-right	" ng-click="showDeleteModal()">
+                    Delete lecturer
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header" style="color: white; margin-top:20px;">Lecturer's Profile:
+                        <small style="color: white">{{lecturer.name}}</small>
+                    </h1>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <!-- Portfolio Item Row -->
+            <div class="row" >
+
+                <div class="col-md-6" >
+                    <img class="img-circle img-responsive img-center" ng-src="{{lecturer.picture}}" alt="">
+                    <h2>Lecturer Details:</h2>
+                    <h3>Name: {{lecturer.name}}</h3>
+                    <p>Description: <br>
+                     {{lecturer.description}}</p>
+                    <p>Courses:</p>
+                    <ul>
+                        <li ng-repeat="cor in lecturer.courses">
+                            <p>{{cor}}</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <!-- /.row -->
-
-        <!-- Portfolio Item Row -->
-        <div class="row">
-
-            <div class="col-md-6">
-                 <img class="img-circle img-responsive img-center" ng-src="{{lecturer.picture}}" alt="">
-                <h3>Lecturer Details:</h3>
-                <p>Name: {{lecturer.name}}<br /><br />
-                Description: {{lecturer.description}}<br /><br />
-                Courses: {{lecturer.courses}}</p>
-            </div>
-			<ul>
-			<br /><br /><br /><br />
-			   <li class="myList"  ng-repeat="course in courses | filter: {lecturer: lecturer.name}" >
-				<div>
-					<h2>{{course.name}}</h2>
-						<img class="img-responsive" ng-src="{{course.picture}}" alt="" />
-					<p>{{course.description}}</p>
-					<br />
-			   		<button type = "button" class = "btn btn-primary">
-						Edit Course
-					</button>
-				</div>
-			</li>  
-			</ul>
-
-            </div>
-        </div>
-	</div>
-</div>
+    </div>
 </div>
