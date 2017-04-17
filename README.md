@@ -37,7 +37,7 @@ Follow the steps below to deploy this project:
 7. If you do not have MongoChef then open a new command prompt and type 'mongo' into it. Execute the commands as instructed under the "Creating the database" heading.
 8. Open this project within Eclipse EE or IntelliJ by importing the project into the IDE as a maven project.
 9. Run TodoApplication.Java.  
-You can alternatively run the project from the cmd, by navigating to the project folder in the console and running the following command
+You can alternatively run the project from the command line, by navigating to the project folder in the console and running the following command
 	```
 	mvn spring-boot:run
 	```
